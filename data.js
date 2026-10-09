@@ -3,8 +3,8 @@ window.PROGRESS_DATA = {
   "schema_version": 1,
   "meta": {
     "title": "雙 AI 整合進度",
-    "updated_at": "2026-10-09T05:16:04+00:00",
-    "revision": "20261009-03",
+    "updated_at": "2026-10-09T15:50:00+00:00",
+    "revision": "20261009-04",
     "snapshot_notice": "資料快照，非即時",
     "sync_status": "manual_snapshot",
     "sync_note": "由 Controller 核對來源後更新資料；尚未建立頁面自動同步。",
@@ -54,14 +54,13 @@ window.PROGRESS_DATA = {
               "id": "np",
               "title": "NP-PRH 安全前置",
               "status": "hold",
-              "summary": "驗證器修補及獨立審查完成；64 案合成資料離線 SCOPE PASS 已收束。新工作階段準備已批准，待本人操作；W01 尚未掛載，正式 P／W02 尚未通過。",
+              "summary": "驗證器修補及獨立審查完成；64 案合成資料離線 SCOPE PASS 已收束。10/09 21:49:13 曾啟用 W01，22:04:44 settings 磁碟恢復，runtime 未證；正式 P／W02 未通過，下輪 HOLD。",
               "evidence": {
                 "level": "handoff",
                 "source": "已核安全前置進度摘要（10/09）"
               },
               "blockers": [
-                "已批准的準備待使用者本人回到電腦，在 Terminal 操作。",
-                "W01 尚未掛載。",
+                "W01 已截止；下輪 HOLD，須重綁批准鏈。",
                 "正式 P／W02 尚未通過；離線限定範圍通過不等於正式驗收。",
                 "既有限制仍保留。"
               ],
@@ -327,20 +326,21 @@ window.PROGRESS_DATA = {
                 {
                   "id": "np-session-prepare",
                   "title": "NP 新工作階段準備（C 批次）",
-                  "status": "waiting",
-                  "summary": "準備已批准；使用者目前不在電腦旁，待本人於 Terminal 執行。",
+                  "status": "limited",
+                  "summary": "10/09 21:49 建立 W01 窗口；窗口內無 allow、僅一筆 deny，未捕獲合格 2c；22:00 到期，本輪操作已截止。settings 磁碟退場完成，runtime 未證。",
                   "evidence": {
-                    "level": "handoff",
-                    "source": "已核進度摘要（10/09）"
+                    "level": "local",
+                    "source": "stage3-prh 稽核紀錄與 W01 恢復收據（本機，10/09 夜核）"
                   },
                   "blockers": [
-                    "等待使用者本人可操作電腦。"
+                    "未捕獲合格 2c 事件。",
+                    "settings 退場後 runtime 狀態未證。"
                   ],
                   "next_steps": [
-                    "本人回到電腦後執行已批准的準備。"
+                    "依 Controller 裁定處理到期後狀態與下一輪批准鏈。"
                   ],
-                  "checked_at": "2026-10-09T05:11:22+00:00",
-                  "estimate_gap": "批准已取得；本人可操作時間未知，不新增批准等待或估算工時。",
+                  "checked_at": "2026-10-09T15:50:00+00:00",
+                  "estimate_gap": "實際工時無紀錄；21:49–22:00 是窗口期，不是工時。",
                   "actual_start": null,
                   "actual_end": null,
                   "date_sources": {
@@ -359,6 +359,30 @@ window.PROGRESS_DATA = {
                       "precision": "day",
                       "timezone": "Asia/Taipei",
                       "source": "已核進度摘要（10/09）"
+                    },
+                    {
+                      "kind": "observation",
+                      "at": "2026-10-09T21:49:13+08:00",
+                      "label": "W01 窗口建立",
+                      "precision": "second",
+                      "timezone": "Asia/Taipei",
+                      "source": "stage3-prh 稽核紀錄與 W01 恢復收據（本機，10/09 夜核）"
+                    },
+                    {
+                      "kind": "observation",
+                      "at": "2026-10-09T22:00:00+08:00",
+                      "label": "W01 窗口到期（本輪操作截止）",
+                      "precision": "minute",
+                      "timezone": "Asia/Taipei",
+                      "source": "stage3-prh 稽核紀錄與 W01 恢復收據（本機，10/09 夜核）"
+                    },
+                    {
+                      "kind": "report",
+                      "at": "2026-10-09T22:04:44+08:00",
+                      "label": "settings 磁碟恢復收據（runtime 未證）",
+                      "precision": "second",
+                      "timezone": "Asia/Taipei",
+                      "source": "stage3-prh 稽核紀錄與 W01 恢復收據（本機，10/09 夜核）"
                     }
                   ],
                   "machine_runtime_seconds": null,
@@ -368,18 +392,19 @@ window.PROGRESS_DATA = {
                   "id": "release",
                   "title": "正式掛載與下一批驗收",
                   "status": "hold",
-                  "summary": "W01 尚未掛載；正式 P／W02 尚未通過。64 案離線 SCOPE PASS 不解除正式門檻。",
+                  "summary": "10/09 21:49:13 曾啟用 W01，22:04:44 settings 磁碟恢復，runtime 未證；正式 P／W02 未通過，下輪 HOLD。64 案離線 SCOPE PASS 不解除正式門檻。",
                   "evidence": {
-                    "level": "handoff",
-                    "source": "已核安全前置進度摘要（10/09）"
+                    "level": "mixed",
+                    "source": "已核安全前置進度摘要（10/09）；stage3-prh 稽核紀錄與 W01 恢復收據（本機，10/09 夜核）"
                   },
                   "blockers": [
-                    "W01 尚未掛載，正式 P／W02 尚無通過結果。"
+                    "W01 曾啟用但未捕獲 2c；正式 P／W02 尚無通過結果。",
+                    "下輪 HOLD，須重綁批准鏈。"
                   ],
                   "next_steps": [
-                    "由既有執行線按原門檻完成掛載與正式驗收。"
+                    "依 Controller 裁定；由既有執行線按原門檻進行下一輪。"
                   ],
-                  "checked_at": "2026-10-09T05:11:22+00:00",
+                  "checked_at": "2026-10-09T15:50:00+00:00",
                   "estimate_gap": "前提與等待時間未定，無開始／結束日期。",
                   "actual_start": null,
                   "actual_end": null,
@@ -546,26 +571,26 @@ window.PROGRESS_DATA = {
           "id": "C",
           "title": "skills 共用",
           "status": "preparing",
-          "summary": "已有 24 份技能主文件盤點與部分共用入口的歷史資料；本輪完整技能共用工程尚未完成。共用雲端模擬原型完成、獨立複核通過，正式工程另行驗收。",
+          "summary": "本批限 ai-bridge（10/09 Ming 裁定；cross-review 停做、既有資料包保留）。ai-bridge 已有有界驗證回報，原證交接待核；自動派工驗收未完。D2 正式驗收排 W3 後。",
           "evidence": {
             "level": "mixed",
-            "source": "既有限定盤點與已核進度摘要（10/09）"
+            "source": "既有限定盤點與已核進度摘要（10/09）；C 計畫 10/09 範圍裁定段"
           },
           "blockers": [
-            "完整附件與相依尚未全部核實。",
-            "共用、單一平台適用及歸屬待逐項裁定。",
-            "已有入口不能證明兩個平台均已成功載入。"
+            "有界驗證回報的原證交接待核。",
+            "自動派工驗收未完；D2 正式驗收排 W3 後。",
+            "文件落差：ai-bridge 手動限定已清除（現行 SKILL.md frontmatter 只有 name、description），C 計畫第 105、126 行仍寫原限定，待更新文字。"
           ],
           "next_steps": [
-            "確認每項技能的主來源、適用平台與完整附件。",
-            "按具體批次安排入口與載入驗收。"
+            "原證交接後核對。",
+            "完成自動派工驗收；W3 後執行 D2。"
           ],
-          "checked_at": "2026-10-09T05:16:04+00:00",
-          "estimate_gap": "24 份主文件不等於 24 個完整套件；附件規模與驗收批數未知。",
+          "checked_at": "2026-10-09T15:50:00+00:00",
+          "estimate_gap": "本批只含 ai-bridge；其餘技能不在本批。實際工時無紀錄。",
           "facts": [
-            "24 份主文件已讀",
-            "已有部分共用入口的歷史資料",
-            "本輪技能共用工程未完成"
+            "24 份主文件已讀（歷史）",
+            "本批技能範圍限 ai-bridge",
+            "ai-bridge 兩端入口與本體清單已核（10/09 夜）"
           ],
           "actual_start": null,
           "actual_end": null,
@@ -1375,9 +1400,9 @@ window.PROGRESS_DATA = {
           "timing_source_id": "np-session-prepare",
           "phase": 2,
           "phase_end": 2,
-          "status": "waiting",
+          "status": "limited",
           "deps": [],
-          "note": "已批准；待本人 Terminal",
+          "note": "10/09 21:49 建窗；22:00 截止",
           "summary": "",
           "next_step": "",
           "nested": true
@@ -1393,9 +1418,9 @@ window.PROGRESS_DATA = {
           "deps": [
             "np-m3"
           ],
-          "note": "W01 未掛載；P／W02 未過",
-          "summary": "離線限定驗證通過；正式掛載與驗收仍未完成。",
-          "next_step": "依原門檻完成 W01 掛載及正式驗收。",
+          "note": "21:49:13 曾啟用；22:04:44 磁碟恢復；下輪 HOLD",
+          "summary": "曾啟用並磁碟退場，正式驗收未完；下輪待新批准。",
+          "next_step": "曾啟用並磁碟退場，正式驗收未完；下輪待新批准。",
           "nested": true,
           "timing_source_id": null
         },
@@ -1547,11 +1572,11 @@ window.PROGRESS_DATA = {
           "source_id": "C",
           "phase": 0,
           "phase_end": 1,
-          "status": "preparing",
+          "status": "limited",
           "deps": [],
-          "note": "平台／完整附件待核",
-          "summary": "主文件盤點已完成；完整附件、平台適用性與正式批次仍待核對。",
-          "next_step": "選首批技能，固定完整附件及平台契約。",
+          "note": "有界驗證已回報；原證待核",
+          "summary": "ai-bridge 已有有界驗證回報，原證交接待核；自動派工驗收未完。",
+          "next_step": "原證交接後核對。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1566,9 +1591,9 @@ window.PROGRESS_DATA = {
           "deps": [
             "c-plan"
           ],
-          "note": "尚未實作",
-          "summary": "設計與批次獲准後建立完整套件；目前未執行。",
-          "next_step": "先完成套件設計與具體批次核准。",
+          "note": "自動派工驗收未完",
+          "summary": "ai-bridge 已有有界驗證回報，原證交接待核；自動派工驗收未完。本體已在 repo、兩端連結已存在；C3／C4 是否改 N/A 待裁。",
+          "next_step": "完成自動派工驗收；依裁定標 C3／C4。",
           "nested": false,
           "timing_source_id": null
         },
