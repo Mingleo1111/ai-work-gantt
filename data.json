@@ -2,8 +2,8 @@
   "schema_version": 1,
   "meta": {
     "title": "雙 AI 整合進度",
-    "updated_at": "2026-10-08T07:18:23+00:00",
-    "revision": "20261008-08",
+    "updated_at": "2026-10-09T05:11:22+00:00",
+    "revision": "20261009-01",
     "snapshot_notice": "資料快照，非即時",
     "sync_status": "manual_snapshot",
     "sync_note": "由 Controller 核對來源後更新資料；尚未建立頁面自動同步。",
@@ -14,7 +14,7 @@
       "id": "integration",
       "title": "雙 AI 工作環境整合",
       "status": "active",
-      "summary": "四項同級成果分別準備；安全前置仍在 A 之內。",
+      "summary": "四項同級成果分別準備；安全前置仍在 A 內。B／C 共用雲端模擬已開始，尚未完成正式工程。",
       "evidence": {
         "level": "mixed",
         "source": "限定核證、唯讀盤點、04 版計畫與 Controller 最新交接"
@@ -25,7 +25,7 @@
       "next_steps": [
         "延續已授權安全前置，並準備四子計畫的後續工作。"
       ],
-      "checked_at": "2026-10-08T06:43:09+00:00",
+      "checked_at": "2026-10-09T05:11:22+00:00",
       "estimate_gap": "缺少實作批次、完整規模與等待時間，不計完成百分比。",
       "purpose": "讓共用規則、專案歸屬、技能來源與雙 AI 驗收都有清楚依據。",
       "workstreams": [
@@ -33,41 +33,44 @@
           "id": "A",
           "title": "共用開場規則",
           "status": "hold",
-          "summary": "承接歷史③；M3 準備候選與 S0 本次已通過，規則正式落地仍待放行。",
+          "summary": "四象限規則盤點已完成：155 條、44 條待裁、11 組重複；清理與正式落地尚未完成。",
           "evidence": {
-            "level": "mixed",
-            "source": "03 版 A 計畫候選與最新安全前置交接"
+            "level": "handoff",
+            "source": "已核規則盤點與安全前置進度摘要（10/09）"
           },
           "blockers": [
-            "安全前置尚未全部放行。",
-            "正式採用的規則權威與下一批操作待原 Controller 確認。"
+            "44 條規則待裁，重複內容清理尚未完成。",
+            "安全前置尚未正式掛載，正式 P／W02 尚未通過。"
           ],
           "next_steps": [
-            "由既有執行線核對 M3 準備結果並準備後續放行內容。",
-            "依原安全門檻處理正式延期與規則落地。"
+            "完成待裁規則與重複內容的清理。",
+            "沿原安全門檻處理正式掛載及後續驗收。"
           ],
-          "checked_at": "2026-10-08T05:52:53+00:00",
+          "checked_at": "2026-10-09T05:11:22+00:00",
           "estimate_gap": "需先鎖定採用版本、批次與放行前提；不彙總候選工時。",
           "children": [
             {
               "id": "np",
               "title": "NP-PRH 安全前置",
               "status": "hold",
-              "summary": "M3／S0 已通過，PREACT dry-run 已完成；正式延期仍未生效。",
+              "summary": "驗證器修補及獨立審查完成；64 案合成資料離線 SCOPE PASS 已收束。新工作階段準備已批准，待本人操作；W01 尚未掛載，正式 P／W02 尚未通過。",
               "evidence": {
-                "level": "mixed",
-                "source": "Controller 交接與本機限定核證報告"
+                "level": "handoff",
+                "source": "已核安全前置進度摘要（10/09）"
               },
               "blockers": [
-                "正式延期尚未生效，後續放行仍須沿原安全門檻。",
-                "P／E6／W02 維持 HOLD；F34 限制仍保留。"
+                "已批准的準備待使用者本人回到電腦，在 Terminal 操作。",
+                "W01 尚未掛載。",
+                "正式 P／W02 尚未通過；離線限定範圍通過不等於正式驗收。",
+                "既有限制仍保留。"
               ],
               "next_steps": [
-                "由既有執行線核對本次準備結果，再處理下一批具體核准。",
-                "在正式延期生效前，保留目前放行限制。"
+                "本人回到電腦後執行已批准的準備批次。",
+                "由既有執行線按原門檻完成 W01 掛載。",
+                "取得正式執行結果後再處理 P／W02 驗收。"
               ],
-              "checked_at": "2026-10-08T06:43:09+00:00",
-              "estimate_gap": "M3／S0 本次準備已完成；後續放行前提與等待時間未定，無可靠完成日。",
+              "checked_at": "2026-10-09T05:11:22+00:00",
+              "estimate_gap": "離線驗證已收束；正式掛載與驗收時程未定。",
               "milestones": [
                 {
                   "id": "gate2",
@@ -276,21 +279,106 @@
                   "machine_runtime_source": null
                 },
                 {
-                  "id": "release",
-                  "title": "正式延期與下一批放行",
-                  "status": "hold",
-                  "summary": "M3／S0 與 PREACT dry-run 已完成；正式延期仍未生效，P／E6／W02 維持 HOLD。",
+                  "id": "np-verifier64",
+                  "title": "64 案離線範圍驗證",
+                  "status": "done",
+                  "summary": "驗證器修補及獨立審查完成；64 案合成資料結果已獨立核對並收束，結論為 SCOPE PASS。",
                   "evidence": {
                     "level": "handoff",
-                    "source": "Controller 最新安全前置交接"
+                    "source": "已核進度摘要（10/09）"
                   },
                   "blockers": [
-                    "正式延期尚未生效；後續操作仍待原門檻與具體核准。"
+                    "僅代表離線合成資料的限定範圍通過；不能替代正式掛載及驗收。"
                   ],
                   "next_steps": [
-                    "由既有執行線處理；本看板不執行工程或解除門檻。"
+                    "保留已接受結論，繼續依原門檻處理正式操作。"
                   ],
-                  "checked_at": "2026-10-08T06:43:09+00:00",
+                  "checked_at": "2026-10-09T05:11:22+00:00",
+                  "estimate_gap": "已核 12:45 收束時間；真正開始時間與實工時未知。",
+                  "actual_start": null,
+                  "actual_end": "2026-10-09T12:45+08:00",
+                  "date_sources": {
+                    "actual_start": null,
+                    "actual_end": {
+                      "label": "已核離線驗證收束回報",
+                      "precision": "minute",
+                      "timezone": "Asia/Taipei",
+                      "verified_at": "2026-10-09T05:11:22+00:00"
+                    }
+                  },
+                  "calendar_span_days": null,
+                  "actual_work_hours": null,
+                  "work_hours_source": null,
+                  "estimate_basis": null,
+                  "date_events": [
+                    {
+                      "kind": "receipt",
+                      "at": "2026-10-09T12:51+08:00",
+                      "label": "主計畫登錄",
+                      "precision": "minute",
+                      "timezone": "Asia/Taipei",
+                      "source": "已核進度摘要（10/09）"
+                    }
+                  ],
+                  "machine_runtime_seconds": null,
+                  "machine_runtime_source": null
+                },
+                {
+                  "id": "np-session-prepare",
+                  "title": "NP 新工作階段準備（C 批次）",
+                  "status": "waiting",
+                  "summary": "準備已批准；使用者目前不在電腦旁，待本人於 Terminal 執行。",
+                  "evidence": {
+                    "level": "handoff",
+                    "source": "已核進度摘要（10/09）"
+                  },
+                  "blockers": [
+                    "等待使用者本人可操作電腦。"
+                  ],
+                  "next_steps": [
+                    "本人回到電腦後執行已批准的準備。"
+                  ],
+                  "checked_at": "2026-10-09T05:11:22+00:00",
+                  "estimate_gap": "批准已取得；本人可操作時間未知，不新增批准等待或估算工時。",
+                  "actual_start": null,
+                  "actual_end": null,
+                  "date_sources": {
+                    "actual_start": null,
+                    "actual_end": null
+                  },
+                  "calendar_span_days": null,
+                  "actual_work_hours": null,
+                  "work_hours_source": null,
+                  "estimate_basis": null,
+                  "date_events": [
+                    {
+                      "kind": "report",
+                      "at": "2026-10-09",
+                      "label": "本次進度回報日",
+                      "precision": "day",
+                      "timezone": "Asia/Taipei",
+                      "source": "已核進度摘要（10/09）"
+                    }
+                  ],
+                  "machine_runtime_seconds": null,
+                  "machine_runtime_source": null
+                },
+                {
+                  "id": "release",
+                  "title": "正式掛載與下一批驗收",
+                  "status": "hold",
+                  "summary": "W01 尚未掛載；正式 P／W02 尚未通過。64 案離線 SCOPE PASS 不解除正式門檻。",
+                  "evidence": {
+                    "level": "handoff",
+                    "source": "已核安全前置進度摘要（10/09）"
+                  },
+                  "blockers": [
+                    "W01 尚未掛載，正式 P／W02 尚無通過結果。"
+                  ],
+                  "next_steps": [
+                    "由既有執行線按原門檻完成掛載與正式驗收。"
+                  ],
+                  "checked_at": "2026-10-09T05:11:22+00:00",
                   "estimate_gap": "前提與等待時間未定，無開始／結束日期。",
                   "actual_start": null,
                   "actual_end": null,
@@ -320,6 +408,44 @@
               "date_events": [],
               "machine_runtime_seconds": null,
               "machine_runtime_source": null
+            },
+            {
+              "id": "a-rule-inventory",
+              "title": "四象限規則盤點",
+              "status": "done",
+              "summary": "155 條規則盤點完成；其中 44 條待裁、11 組重複，盤點完成不代表清理完成。",
+              "evidence": {
+                "level": "handoff",
+                "source": "已核進度摘要（10/09）"
+              },
+              "blockers": [],
+              "next_steps": [
+                "逐項裁定並清理重複規則。"
+              ],
+              "checked_at": "2026-10-09T05:11:22+00:00",
+              "estimate_gap": "未取得實際開始、結束與獨立計時資料；不推算工時或完成日期。",
+              "actual_start": null,
+              "actual_end": null,
+              "date_sources": {
+                "actual_start": null,
+                "actual_end": null
+              },
+              "calendar_span_days": null,
+              "actual_work_hours": null,
+              "work_hours_source": null,
+              "estimate_basis": null,
+              "date_events": [
+                {
+                  "kind": "report",
+                  "at": "2026-10-09",
+                  "label": "本次進度回報日",
+                  "precision": "day",
+                  "timezone": "Asia/Taipei",
+                  "source": "已核進度摘要（10/09）"
+                }
+              ],
+              "machine_runtime_seconds": null,
+              "machine_runtime_source": null
             }
           ],
           "actual_start": null,
@@ -340,10 +466,10 @@
           "id": "B",
           "title": "Codex 專案歸檔",
           "status": "preparing",
-          "summary": "已完成限定唯讀盤點；尚未進入搬移或切換。",
+          "summary": "已有 56 項限定盤點與歷史資料；本輪歸檔工程尚未完成。共用雲端模擬已開始，正式遷移另行驗收。",
           "evidence": {
-            "level": "local",
-            "source": "唯讀增量盤點與 03 版 B 計畫候選"
+            "level": "mixed",
+            "source": "既有限定盤點與已核進度摘要（10/09）"
           },
           "blockers": [
             "首批來源、歸屬與目的地待確認。",
@@ -354,11 +480,12 @@
             "先選首批範圍，補齊逐檔清單與保全需求。",
             "備份與回復方式具體化後再送批次核准。"
           ],
-          "checked_at": "2026-10-08T05:30:33+00:00",
+          "checked_at": "2026-10-09T05:11:22+00:00",
           "estimate_gap": "僅有 56 項頂層盤點，並非完整容量；批數與實作估時未知。",
           "facts": [
             "56 項頂層已盤點",
-            "未搬移／未切換"
+            "本輪正式歸檔工程未完成",
+            "雲端模擬不代表正式遷移"
           ],
           "actual_start": null,
           "actual_end": null,
@@ -418,10 +545,10 @@
           "id": "C",
           "title": "skills 共用",
           "status": "preparing",
-          "summary": "已讀 24 份技能主文件；各平台適用性仍待逐項確認。",
+          "summary": "已有 24 份技能主文件盤點與部分共用入口的歷史資料；本輪完整技能共用工程尚未完成。共用雲端模擬已開始，正式工程另行驗收。",
           "evidence": {
-            "level": "local",
-            "source": "唯讀增量盤點與 03 版 C 計畫候選"
+            "level": "mixed",
+            "source": "既有限定盤點與已核進度摘要（10/09）"
           },
           "blockers": [
             "完整附件與相依尚未全部核實。",
@@ -432,11 +559,12 @@
             "確認每項技能的主來源、適用平台與完整附件。",
             "按具體批次安排入口與載入驗收。"
           ],
-          "checked_at": "2026-10-08T05:30:33+00:00",
+          "checked_at": "2026-10-09T05:11:22+00:00",
           "estimate_gap": "24 份主文件不等於 24 個完整套件；附件規模與驗收批數未知。",
           "facts": [
             "24 份主文件已讀",
-            "未宣告雙平台相容"
+            "已有部分共用入口的歷史資料",
+            "本輪技能共用工程未完成"
           ],
           "actual_start": null,
           "actual_end": null,
@@ -496,10 +624,10 @@
           "id": "D",
           "title": "整體驗收",
           "status": "waiting",
-          "summary": "已有 03 版驗收計畫候選；尚未執行整體驗收。",
+          "summary": "總計畫與四子計畫 04 版文書審查完成；A／B／C 本輪正式工程尚未完成，整體驗收也未完成。",
           "evidence": {
-            "level": "local",
-            "source": "03 版 D 計畫候選"
+            "level": "handoff",
+            "source": "已核整體進度摘要（10/09）"
           },
           "blockers": [
             "A／B／C 尚未提供同版正式交付。",
@@ -509,11 +637,11 @@
             "可先建立範圍、平台、場景與證據矩陣。",
             "取得 A／B／C 固定交付後逐項驗收。"
           ],
-          "checked_at": "2026-10-08T05:30:33+00:00",
+          "checked_at": "2026-10-09T05:11:22+00:00",
           "estimate_gap": "實際範圍、平台與場景組未定；無整體完成日期。",
           "facts": [
-            "驗收計畫候選",
-            "無整體 PASS"
+            "04 版計畫文書已審",
+            "整體驗收未完成"
           ],
           "actual_start": null,
           "actual_end": null,
@@ -535,7 +663,7 @@
           "id": "plans",
           "title": "總計畫＋四子計畫",
           "status": "done",
-          "summary": "總計畫與四子計畫 04 版文書已完成，三項審查問題已閉合；不需 r2。",
+          "summary": "總計畫與四子計畫 04 版文書審查完成；這是共同行動，不代表 A／B／C／D 實作完成。",
           "evidence": {
             "level": "handoff",
             "source": "Controller 最新交付核對：回條與十份主檔一致"
@@ -544,7 +672,7 @@
           "next_steps": [
             "依已完成計畫準備各項具體工程批次；四項實作成果尚未完成。"
           ],
-          "checked_at": "2026-10-08T06:49:51+00:00",
+          "checked_at": "2026-10-09T05:11:22+00:00",
           "estimate_gap": "本次規劃文書已完成；工程工期另依各項實際批次確認。",
           "observed_date": "2026-10-08",
           "actual_start": null,
@@ -601,7 +729,7 @@
           "id": "review",
           "title": "cross-review",
           "status": "done",
-          "summary": "三項中等問題已閉合，04 版計畫與審查完成；不需 r2。",
+          "summary": "04 版計畫文書審查已完成，既有三項問題已閉合；工程實作與整體驗收仍分項處理。",
           "evidence": {
             "level": "handoff",
             "source": "CC 審查閉合與 Controller 交付核對回報"
@@ -610,7 +738,7 @@
           "next_steps": [
             "保留審查與閉合紀錄，後續工程仍按各項批次執行。"
           ],
-          "checked_at": "2026-10-08T06:49:51+00:00",
+          "checked_at": "2026-10-09T05:11:22+00:00",
           "estimate_gap": "本次計畫審查已完成；不追加 r2 日程。",
           "actual_start": null,
           "actual_end": "2026-10-08",
@@ -889,7 +1017,7 @@
               "id": "h2-step8-review",
               "title": "②步8 最早評估",
               "status": "waiting",
-              "summary": "最早 10/13 起才可評估；前提齊備及另行授權後才能處理，並非到期自動完成。",
+              "summary": "最早 10/13 起才可評估；仍須前提齊備及另行授權，不是必刪日，也不會到期自動執行。",
               "evidence": {
                 "level": "local",
                 "source": "05 日期證據表（已核歷史來源摘要） DT15／既有觀察門檻"
@@ -898,7 +1026,7 @@
               "next_steps": [
                 "到最早評估點後，核對觀察證據與其餘前提。"
               ],
-              "checked_at": "2026-10-08T06:49:51+00:00",
+              "checked_at": "2026-10-09T05:11:22+00:00",
               "estimate_gap": "14 日是觀察門檻，不是人工工作量；主動工時待核。",
               "actual_start": null,
               "actual_end": null,
@@ -938,27 +1066,67 @@
       "estimate_basis": null,
       "date_events": [],
       "machine_runtime_seconds": null,
-      "machine_runtime_source": null
+      "machine_runtime_source": null,
+      "children": [
+        {
+          "id": "bc-cloud-simulation",
+          "title": "專案歸檔／技能共用雲端模擬",
+          "status": "active",
+          "summary": "已在獨立雲端環境開始試做，尚未完成；不動工作機原檔，也不構成正式遷移。",
+          "evidence": {
+            "level": "handoff",
+            "source": "已核進度摘要（10/09）"
+          },
+          "blockers": [
+            "模擬結果尚未交付。"
+          ],
+          "next_steps": [
+            "由負責模擬的執行線完成試做並回報限制；正式遷移另依原門檻。"
+          ],
+          "checked_at": "2026-10-09T05:11:22+00:00",
+          "estimate_gap": "未取得實際開始、結束與獨立計時資料；不推算工時或完成日期。",
+          "actual_start": null,
+          "actual_end": null,
+          "date_sources": {
+            "actual_start": null,
+            "actual_end": null
+          },
+          "calendar_span_days": null,
+          "actual_work_hours": null,
+          "work_hours_source": null,
+          "estimate_basis": null,
+          "date_events": [
+            {
+              "kind": "report",
+              "at": "2026-10-09",
+              "label": "本次進度回報日",
+              "precision": "day",
+              "timezone": "Asia/Taipei",
+              "source": "已核進度摘要（10/09）"
+            }
+          ],
+          "machine_runtime_seconds": null,
+          "machine_runtime_source": null
+        }
+      ]
     },
     {
       "id": "documents",
       "title": "計畫文件整理",
       "status": "active",
-      "summary": "21 項分類勘誤已確認：完成 4、進行中 10、待辦 6、不確定 1。計畫目錄整併已完成；必要長期資料保全仍進行中。",
+      "summary": "計畫目錄已由 69 項整理為 28 項，保留 5 份固定主檔＋1 份 CC 活動檔；必要長期資料保全已完成。21 項分類統計保留為 10/08 基準。",
       "evidence": {
-        "level": "mixed",
-        "source": "唯讀分類報告、Controller 已核分類勘誤與目錄整併回報"
+        "level": "handoff",
+        "source": "已核文件整理與保全進度摘要（10/09）"
       },
       "blockers": [
-        "1 項不確定事項仍待人工審閱。",
-        "必要長期資料保全尚未完成，不能以本批計畫目錄整併代替。"
+        "10/08 分類基準中的個別不確定事項，本次未取得逐項重判結果。"
       ],
       "next_steps": [
-        "人工審閱剩餘不確定事項，繼續整理必要長期資料保全清單。",
-        "依個別裁定處理其餘文件，保存可回復依據。"
+        "維持固定主檔與活動檔的分工；後續變更逐項核對。"
       ],
-      "checked_at": "2026-10-08T07:18:23+00:00",
-      "estimate_gap": "分類已交付；人工裁定與後續歸檔範圍仍未定，無核定工期。",
+      "checked_at": "2026-10-09T05:11:22+00:00",
+      "estimate_gap": "目錄整併與必要保全已完成；未取得可換算實工時的起訖紀錄。",
       "purpose": "看清每份計畫在做什麼、做到哪裡，以及該放在哪裡。",
       "categories": [
         {
@@ -993,20 +1161,18 @@
         {
           "id": "preservation",
           "title": "必要長期資料保全",
-          "status": "active",
-          "summary": "必要長期資料保全仍進行中；計畫目錄整併已完成，但未構成本項保全驗收。",
+          "status": "done",
+          "summary": "必要長期資料保全已完成；完成保全不代表 A／B／C／D 工程已完成。",
           "evidence": {
             "level": "handoff",
-            "source": "Controller 已核分類勘誤與耐久保存清單摘要"
+            "source": "已核必要保全完成回報（10/09）"
           },
-          "blockers": [
-            "必要長期資料清單與保全處置仍在整理。"
-          ],
+          "blockers": [],
           "next_steps": [
-            "確認必要長期資料及保全位置，保留原件至處置確定。"
+            "維持已保全資料及後續異動紀錄。"
           ],
-          "checked_at": "2026-10-08T07:18:23+00:00",
-          "estimate_gap": "實際範圍與工作量待核；開始、完成及實工時均無已核資料。",
+          "checked_at": "2026-10-09T05:11:22+00:00",
+          "estimate_gap": "完成狀態已回報，精確作業起訖與實工時未提供。",
           "actual_start": null,
           "actual_end": null,
           "date_sources": {
@@ -1017,7 +1183,16 @@
           "actual_work_hours": null,
           "work_hours_source": null,
           "estimate_basis": null,
-          "date_events": [],
+          "date_events": [
+            {
+              "kind": "report",
+              "at": "2026-10-09",
+              "label": "必要保全完成回報",
+              "precision": "day",
+              "timezone": "Asia/Taipei",
+              "source": "已核進度摘要（10/09）"
+            }
+          ],
           "machine_runtime_seconds": null,
           "machine_runtime_source": null
         },
@@ -1025,16 +1200,16 @@
           "id": "docs-consolidation",
           "title": "計畫目錄整併",
           "status": "done",
-          "summary": "目錄總項目由 69 減至 28；本批由 47 減至 6。已核對 106 個連結可達，32 項移入證據區，14 項放入可回復垃圾區。",
+          "summary": "目錄總項目由 69 減至 28；本批由 47 減至 6，保留 5 份固定主檔＋1 份 CC 活動檔。106 個連結已核對可達，32 項移入保存區，14 項放入可回復垃圾區。",
           "evidence": {
             "level": "handoff",
             "source": "Controller 已核計畫目錄整併完成回報"
           },
           "blockers": [],
           "next_steps": [
-            "維持索引與連結可用；其餘長期資料保全另行核對。"
+            "維持固定主檔、活動檔與索引連結。"
           ],
-          "checked_at": "2026-10-08T07:18:23+00:00",
+          "checked_at": "2026-10-09T05:11:22+00:00",
           "estimate_gap": "未取得作業起訖與實工時；完成回報不能換算工期。",
           "actual_start": null,
           "actual_end": null,
@@ -1092,7 +1267,7 @@
           "id": "ga",
           "kind": "group",
           "title": "A 共用開場規則",
-          "note": "安全前置仍待放行"
+          "note": "155 條已盤點；清理未完"
         },
         {
           "id": "a-plan",
@@ -1103,11 +1278,26 @@
           "phase_end": 1,
           "status": "preparing",
           "deps": [],
-          "note": "範圍與批次待核",
-          "summary": "整理規則、批次範圍與回復方案。",
-          "next_step": "固定採用範圍，準備具體批次核准。",
+          "note": "44 待裁／11 重複",
+          "summary": "規則盤點完成，待裁及重複內容清理尚未完成。",
+          "next_step": "完成逐項裁定與清理，再固定實作批次。",
           "nested": false,
           "timing_source_id": null
+        },
+        {
+          "id": "a-rule-inventory-fact",
+          "kind": "task",
+          "title": "四象限規則盤點",
+          "source_id": "a-rule-inventory",
+          "timing_source_id": "a-rule-inventory",
+          "phase": 0,
+          "phase_end": 0,
+          "status": "done",
+          "deps": [],
+          "note": "155 條；清理另行",
+          "summary": "",
+          "next_step": "",
+          "nested": false
         },
         {
           "id": "np-evidence",
@@ -1159,9 +1349,39 @@
           "nested": true
         },
         {
+          "id": "np-verifier64-fact",
+          "kind": "task",
+          "title": "64 案離線範圍驗證",
+          "source_id": "np-verifier64",
+          "timing_source_id": "np-verifier64",
+          "phase": 2,
+          "phase_end": 2,
+          "status": "done",
+          "deps": [],
+          "note": "10/09 12:45 SCOPE PASS",
+          "summary": "",
+          "next_step": "",
+          "nested": true
+        },
+        {
+          "id": "np-session-prepare-row",
+          "kind": "task",
+          "title": "NP 新工作階段準備",
+          "source_id": "np-session-prepare",
+          "timing_source_id": "np-session-prepare",
+          "phase": 2,
+          "phase_end": 2,
+          "status": "waiting",
+          "deps": [],
+          "note": "已批准；待本人 Terminal",
+          "summary": "",
+          "next_step": "",
+          "nested": true
+        },
+        {
           "id": "np-release",
           "kind": "task",
-          "title": "NP 正式放行",
+          "title": "NP 正式掛載與驗收",
           "source_id": "release",
           "phase": 2,
           "phase_end": 2,
@@ -1169,9 +1389,9 @@
           "deps": [
             "np-m3"
           ],
-          "note": "正式延期未生效",
-          "summary": "準備候選已成功；正式延期及其餘放行前提仍未完成。",
-          "next_step": "由原負責線完成剩餘前提及具體核准。",
+          "note": "W01 未掛載；P／W02 未過",
+          "summary": "離線限定驗證通過；正式掛載與驗收仍未完成。",
+          "next_step": "依原門檻完成 W01 掛載及正式驗收。",
           "nested": true,
           "timing_source_id": null
         },
@@ -1214,7 +1434,7 @@
           "id": "gb",
           "kind": "group",
           "title": "B Codex 專案歸檔",
-          "note": "56 項頂層已盤點"
+          "note": "盤點已交；本輪工程未完"
         },
         {
           "id": "b-inventory-fact",
@@ -1245,6 +1465,21 @@
           "next_step": "選首批範圍，補齊完整清單及遷移方案。",
           "nested": false,
           "timing_source_id": null
+        },
+        {
+          "id": "bc-cloud-simulation-row",
+          "kind": "task",
+          "title": "B／C 雲端模擬",
+          "source_id": "bc-cloud-simulation",
+          "timing_source_id": "bc-cloud-simulation",
+          "phase": 0,
+          "phase_end": 0,
+          "status": "active",
+          "deps": [],
+          "note": "已開始；未完成",
+          "summary": "",
+          "next_step": "",
+          "nested": false
         },
         {
           "id": "b-copy",
@@ -1284,7 +1519,7 @@
           "id": "gc",
           "kind": "group",
           "title": "C skills 共用",
-          "note": "24 份主文件已讀"
+          "note": "盤點及歷史資料已有；工程未完"
         },
         {
           "id": "c-inventory-fact",
@@ -1310,8 +1545,8 @@
           "phase_end": 1,
           "status": "preparing",
           "deps": [],
-          "note": "平台／附件待核",
-          "summary": "已有主文件盤點，平台適用性、完整附件與批次方案待核。",
+          "note": "平台／完整附件待核",
+          "summary": "主文件盤點已完成；完整附件、平台適用性與正式批次仍待核對。",
           "next_step": "選首批技能，固定完整附件及平台契約。",
           "nested": false,
           "timing_source_id": null
@@ -1363,10 +1598,10 @@
           "source_id": "D",
           "phase": 0,
           "phase_end": 1,
-          "status": "draft",
+          "status": "preparing",
           "deps": [],
-          "note": "可先整理場景",
-          "summary": "驗收計畫已有候選；逐批場景與證據矩陣尚待固定。",
+          "note": "04 文書已審；工程未驗",
+          "summary": "04 版計畫文書審查完成；正式工程交付與整體驗收尚未完成。",
           "next_step": "先完成範圍與驗收場景的對照。",
           "nested": false,
           "timing_source_id": null
@@ -1412,7 +1647,7 @@
           "id": "gg",
           "kind": "group",
           "title": "共同計畫與審查",
-          "note": "04 已完成；05 新增範圍尚未審"
+          "note": "04 文書審完成；非工程完工"
         },
         {
           "id": "g-review",
@@ -1479,9 +1714,9 @@
           "phase_end": 0,
           "status": "done",
           "deps": [],
-          "note": "21 項分類已交",
+          "note": "10/08 分類基準：21 項",
           "summary": "限定分類報告已交付；此報告本身為唯讀，後續目錄整併另列。",
-          "next_step": "人工審閱不確定清單。",
+          "next_step": "後續變更逐項核對。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1496,8 +1731,8 @@
           "deps": [
             "docs-report"
           ],
-          "note": "1 項不確定待確認",
-          "summary": "確認不確定事項及個別文件的後續安排。",
+          "note": "10/08 基準；本次未重判",
+          "summary": "保留歷史分類中的不確定事項；本次未取得逐項重判結果。",
           "next_step": "逐項核對不確定清單與處置。",
           "nested": false,
           "timing_source_id": null
@@ -1527,9 +1762,9 @@
           "timing_source_id": "preservation",
           "phase": 0,
           "phase_end": 0,
-          "status": "active",
+          "status": "done",
           "deps": [],
-          "note": "保全進行中；未驗收",
+          "note": "必要保全已完成",
           "summary": "",
           "next_step": "",
           "nested": false
@@ -1544,7 +1779,7 @@
           "phase_end": 2,
           "status": "done",
           "deps": [],
-          "note": "69 → 28；106 連結可達",
+          "note": "69 → 28；5 固定＋1 活動",
           "summary": "",
           "next_step": "",
           "nested": false
@@ -1615,6 +1850,26 @@
       {
         "source_id": "docs-consolidation",
         "title": "計畫目錄整併"
+      },
+      {
+        "source_id": "a-rule-inventory",
+        "title": "A 四象限規則盤點"
+      },
+      {
+        "source_id": "np-verifier64",
+        "title": "64 案離線範圍驗證"
+      },
+      {
+        "source_id": "np-session-prepare",
+        "title": "NP 新工作階段準備"
+      },
+      {
+        "source_id": "bc-cloud-simulation",
+        "title": "B／C 雲端模擬"
+      },
+      {
+        "source_id": "preservation",
+        "title": "必要長期資料保全"
       }
     ]
   }
