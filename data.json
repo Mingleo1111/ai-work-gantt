@@ -2,8 +2,8 @@
   "schema_version": 1,
   "meta": {
     "title": "雙 AI 整合進度",
-    "updated_at": "2026-10-09T05:12:41+00:00",
-    "revision": "20261009-02",
+    "updated_at": "2026-10-09T05:16:04+00:00",
+    "revision": "20261009-03",
     "snapshot_notice": "資料快照，非即時",
     "sync_status": "manual_snapshot",
     "sync_note": "由 Controller 核對來源後更新資料；尚未建立頁面自動同步。",
@@ -14,7 +14,7 @@
       "id": "integration",
       "title": "雙 AI 工作環境整合",
       "status": "active",
-      "summary": "四項同級成果分別準備；安全前置仍在 A 內。B／C 共用雲端模擬原型已完成、獨立核對中，正式工程仍未完成。",
+      "summary": "四項同級成果分別準備；安全前置仍在 A 內。B／C 共用雲端模擬原型已完成、獨立複核通過，正式工程仍未完成。",
       "evidence": {
         "level": "mixed",
         "source": "限定核證、唯讀盤點、04 版計畫與 Controller 最新交接"
@@ -25,7 +25,7 @@
       "next_steps": [
         "延續已授權安全前置，並準備四子計畫的後續工作。"
       ],
-      "checked_at": "2026-10-09T05:12:41+00:00",
+      "checked_at": "2026-10-09T05:16:04+00:00",
       "estimate_gap": "缺少實作批次、完整規模與等待時間，不計完成百分比。",
       "purpose": "讓共用規則、專案歸屬、技能來源與雙 AI 驗收都有清楚依據。",
       "workstreams": [
@@ -466,7 +466,7 @@
           "id": "B",
           "title": "Codex 專案歸檔",
           "status": "preparing",
-          "summary": "已有 56 項限定盤點與歷史資料；本輪歸檔工程尚未完成。共用雲端模擬原型完成、核對中，正式遷移另行驗收。",
+          "summary": "已有 56 項限定盤點與歷史資料；本輪歸檔工程尚未完成。共用雲端模擬原型完成、獨立複核通過，正式遷移另行驗收。",
           "evidence": {
             "level": "mixed",
             "source": "既有限定盤點與已核進度摘要（10/09）"
@@ -480,7 +480,7 @@
             "先選首批範圍，補齊逐檔清單與保全需求。",
             "備份與回復方式具體化後再送批次核准。"
           ],
-          "checked_at": "2026-10-09T05:12:41+00:00",
+          "checked_at": "2026-10-09T05:16:04+00:00",
           "estimate_gap": "僅有 56 項頂層盤點，並非完整容量；批數與實作估時未知。",
           "facts": [
             "56 項頂層已盤點",
@@ -545,7 +545,7 @@
           "id": "C",
           "title": "skills 共用",
           "status": "preparing",
-          "summary": "已有 24 份技能主文件盤點與部分共用入口的歷史資料；本輪完整技能共用工程尚未完成。共用雲端模擬原型完成、核對中，正式工程另行驗收。",
+          "summary": "已有 24 份技能主文件盤點與部分共用入口的歷史資料；本輪完整技能共用工程尚未完成。共用雲端模擬原型完成、獨立複核通過，正式工程另行驗收。",
           "evidence": {
             "level": "mixed",
             "source": "既有限定盤點與已核進度摘要（10/09）"
@@ -559,7 +559,7 @@
             "確認每項技能的主來源、適用平台與完整附件。",
             "按具體批次安排入口與載入驗收。"
           ],
-          "checked_at": "2026-10-09T05:12:41+00:00",
+          "checked_at": "2026-10-09T05:16:04+00:00",
           "estimate_gap": "24 份主文件不等於 24 個完整套件；附件規模與驗收批數未知。",
           "facts": [
             "24 份主文件已讀",
@@ -1071,25 +1071,28 @@
         {
           "id": "bc-cloud-simulation",
           "title": "專案歸檔／技能共用雲端模擬",
-          "status": "active",
-          "summary": "雲端模擬原型已完成，已回報 27 項測試通過，獨立核對仍進行中；不動工作機原檔，也不構成正式 B／C 遷移或完工。",
+          "status": "done",
+          "summary": "雲端原型已完成並交付，29 項合成測試與獨立複核均通過。工作機原檔未接觸；尚未驗證真實遷移或平台載入，不構成正式 B／C 完工。",
           "evidence": {
             "level": "handoff",
             "source": "已核進度摘要（10/09）"
           },
-          "blockers": [
-            "獨立核對尚未完成。"
-          ],
+          "blockers": [],
           "next_steps": [
-            "由負責執行線完成獨立核對並回報限制；正式遷移另依原門檻。"
+            "正式遷移與平台載入仍須另依核准範圍驗證。"
           ],
-          "checked_at": "2026-10-09T05:12:41+00:00",
-          "estimate_gap": "原型完成回報未提供精確起訖與實工時；獨立核對完成時間待定。",
+          "checked_at": "2026-10-09T05:16:04+00:00",
+          "estimate_gap": "實際完成日已核為 10/09；真正開始時間與實工時未提供，不推算工期。",
           "actual_start": null,
-          "actual_end": null,
+          "actual_end": "2026-10-09",
           "date_sources": {
             "actual_start": null,
-            "actual_end": null
+            "actual_end": {
+              "label": "已核雲端原型交付與獨立複核完成回報",
+              "precision": "day",
+              "timezone": "Asia/Taipei",
+              "verified_at": "2026-10-09T05:16:04+00:00"
+            }
           },
           "calendar_span_days": null,
           "actual_work_hours": null,
@@ -1099,7 +1102,7 @@
             {
               "kind": "report",
               "at": "2026-10-09",
-              "label": "原型完成／27 項測試通過回報；獨立核對中",
+              "label": "雲端原型交付；29 項合成測試與獨立複核通過",
               "precision": "day",
               "timezone": "Asia/Taipei",
               "source": "已核進度摘要（10/09）"
@@ -1474,9 +1477,9 @@
           "timing_source_id": "bc-cloud-simulation",
           "phase": 0,
           "phase_end": 0,
-          "status": "active",
+          "status": "done",
           "deps": [],
-          "note": "原型完成；27 項通過，核對中",
+          "note": "原型完成；29 項及獨立複核通過",
           "summary": "",
           "next_step": "",
           "nested": false
