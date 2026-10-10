@@ -60,12 +60,12 @@ function renderChart(target,chart,key){
  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('dependencies');svg.setAttribute('aria-hidden','true');
  svg.innerHTML=`<defs><marker id="arrow-${key}" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#718a80"/></marker></defs>`;canvas.append(svg);root.replaceChildren(canvas);
  function layout(){
-  const css=getComputedStyle(canvas),phase=Number.parseFloat(css.getPropertyValue('--phase-w')),rowHeight=Number.parseFloat(css.getPropertyValue('--row-h')),headerHeight=Number.parseFloat(css.getPropertyValue('--header-h'));
+  const css=getComputedStyle(canvas),phase=Number.parseFloat(css.getPropertyValue('--phase-w')),headerHeight=Number.parseFloat(css.getPropertyValue('--header-h'));
   for(const {row,bar}of tracks.values()){bar.style.left=(row.phase*phase+16)+'px';bar.style.width=((row.phase_end-row.phase+1)*phase-32)+'px'}
   svg.setAttribute('width',phase*chart.phases.length);svg.setAttribute('height',canvas.offsetHeight-headerHeight);svg.querySelectorAll('.dependency').forEach(p=>p.remove());
   for(const {row,el} of tracks.values()){
    for(const from of row.deps){
-    const prior=tracks.get(from),x1=(prior.row.phase_end+1)*phase-16,x2=row.phase*phase+16,y1=prior.el.offsetTop-headerHeight+rowHeight/2-1,y2=el.offsetTop-headerHeight+rowHeight/2-1;
+    const prior=tracks.get(from),x1=(prior.row.phase_end+1)*phase-16,x2=row.phase*phase+16,y1=prior.el.offsetTop-headerHeight+prior.el.offsetHeight/2-1,y2=el.offsetTop-headerHeight+el.offsetHeight/2-1;
     const turn=x1+12;
     const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',`M${x1} ${y1}H${turn}V${y2}H${x2-3}`);path.setAttribute('marker-end',`url(#arrow-${key})`);path.setAttribute('class','dependency');path.dataset.from=from;path.dataset.to=row.id;svg.append(path);
    }
