@@ -3,8 +3,8 @@ window.PROGRESS_DATA = {
   "schema_version": 1,
   "meta": {
     "title": "雙 AI 整合進度",
-    "updated_at": "2026-10-09T15:50:00+00:00",
-    "revision": "20261009-04",
+    "updated_at": "2026-10-10T15:38:58+00:00",
+    "revision": "20261010-01",
     "snapshot_notice": "資料快照，非即時",
     "sync_status": "manual_snapshot",
     "sync_note": "由 Controller 核對來源後更新資料；尚未建立頁面自動同步。",
@@ -197,6 +197,22 @@ window.PROGRESS_DATA = {
                       "precision": "day",
                       "timezone": null,
                       "source": "本次限定結果交接；05 DT12"
+                    },
+                    {
+                      "kind": "observation",
+                      "at": "2026-10-08T13:17:44+08:00",
+                      "label": "放行命令單寫入（檔案修改時間），非開工",
+                      "precision": "second",
+                      "timezone": "Asia/Taipei",
+                      "source": "M7／M1 放行命令單；檔案時間"
+                    },
+                    {
+                      "kind": "observation",
+                      "at": "2026-10-08T13:18:12+08:00",
+                      "label": "M1 擷取時刻（執行紀錄），非完成時刻",
+                      "precision": "second",
+                      "timezone": "Asia/Taipei",
+                      "source": "M7／M1 限定結果報告 §核對日期"
                     }
                   ],
                   "machine_runtime_seconds": null,
@@ -237,6 +253,22 @@ window.PROGRESS_DATA = {
                       "precision": "day",
                       "timezone": null,
                       "source": "本次限定結果交接；05 DT12"
+                    },
+                    {
+                      "kind": "observation",
+                      "at": "2026-10-08T13:49:55+08:00",
+                      "label": "M3 決策檔生成時刻（紀錄 epoch），非完成時刻",
+                      "precision": "second",
+                      "timezone": "Asia/Taipei",
+                      "source": "M3 限定結果報告 §決策核對"
+                    },
+                    {
+                      "kind": "observation",
+                      "at": "2026-10-08T13:56:01+08:00",
+                      "label": "M3 結果報告寫入（檔案修改時間）",
+                      "precision": "second",
+                      "timezone": "Asia/Taipei",
+                      "source": "M3 限定結果報告；檔案時間"
                     }
                   ],
                   "machine_runtime_seconds": null,
@@ -318,6 +350,30 @@ window.PROGRESS_DATA = {
                       "precision": "minute",
                       "timezone": "Asia/Taipei",
                       "source": "已核進度摘要（10/09）"
+                    },
+                    {
+                      "kind": "observation",
+                      "at": "2026-10-08T19:39:01+08:00",
+                      "label": "首份離線驗證審閱簡報寫入（檔案修改時間），非開工",
+                      "precision": "second",
+                      "timezone": "Asia/Taipei",
+                      "source": "離線驗證審閱簡報；檔案時間"
+                    },
+                    {
+                      "kind": "observation",
+                      "at": "2026-10-08T21:56:12+08:00",
+                      "label": "首版通過目錄建立（檔案修改時間）",
+                      "precision": "second",
+                      "timezone": "Asia/Taipei",
+                      "source": "離線驗證通過目錄；檔案時間"
+                    },
+                    {
+                      "kind": "observation",
+                      "at": "2026-10-09T12:41:13+08:00",
+                      "label": "最終一輪合成測試執行（報告記載 12:41:13～14）",
+                      "precision": "second",
+                      "timezone": "Asia/Taipei",
+                      "source": "離線驗證合成結果報告 04"
                     }
                   ],
                   "machine_runtime_seconds": null,
@@ -468,6 +524,14 @@ window.PROGRESS_DATA = {
                   "precision": "day",
                   "timezone": "Asia/Taipei",
                   "source": "已核進度摘要（10/09）"
+                },
+                {
+                  "kind": "observation",
+                  "at": "2026-09-23T14:38:38+08:00",
+                  "label": "原對帳表最後修改（155 條已對帳），非本項開工或完成",
+                  "precision": "second",
+                  "timezone": "Asia/Taipei",
+                  "source": "四象限原對帳表；檔案時間"
                 }
               ],
               "machine_runtime_seconds": null,
