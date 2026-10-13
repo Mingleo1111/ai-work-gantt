@@ -3,11 +3,11 @@ window.PROGRESS_DATA = {
   "schema_version": 1,
   "meta": {
     "title": "雙 AI 整合進度",
-    "updated_at": "2026-10-10T15:38:58+00:00",
-    "revision": "20261010-01",
+    "updated_at": "2026-10-13T15:11:12+00:00",
+    "revision": "20261013-03",
     "snapshot_notice": "資料快照，非即時",
     "sync_status": "manual_snapshot",
-    "sync_note": "由 Controller 核對來源後更新資料；尚未建立頁面自動同步。",
+    "sync_note": "使用者已重置舊交辦；現行工作為新 C 技能共用。歷史階段與依賴保留，不代表恢復舊任務；本頁仍為人工核對快照。",
     "date_note": "核對日期代表證據被核對的時間，不代表任務開始或完成日。"
   },
   "projects": [
@@ -15,61 +15,61 @@ window.PROGRESS_DATA = {
       "id": "integration",
       "title": "雙 AI 工作環境整合",
       "status": "active",
-      "summary": "四項同級成果分別準備；安全前置仍在 A 內。B／C 共用雲端模擬原型已完成、獨立複核通過，正式工程仍未完成。",
+      "summary": "舊交辦已重置，歷史資料保留。新 C 已完成分類與安全共用驗證；cross-review Codex 專用版已依新批准製作交付，Claude 原版保留。deep-research、stock-quote-refresh 專用版尚未批准，不自動製作。",
       "evidence": {
         "level": "mixed",
-        "source": "限定核證、唯讀盤點、04 版計畫與 Controller 最新交接"
+        "source": "本機核讀 Codex cross-review 交付與驗證回條；Controller 10/13 23:10 交接：20:07 批准、20:18 交付。甘特本輪未重做技能或模型測試。"
       },
       "blockers": [
-        "A 尚未正式放行，B／C 尚未完成工程，D 尚未整體驗收。"
+        "deep-research、stock-quote-refresh 專用版尚未批准；cross-review 新 session 限制情境驗證只涵蓋修訂前版，最終版未重做獨立模型行為驗證。"
       ],
       "next_steps": [
-        "延續已授權安全前置，並準備四子計畫的後續工作。"
+        "保留已完成的安全共用與 cross-review 專用版交付；另外兩項專用版須另行批准，不自動製作、不恢復舊交辦。"
       ],
-      "checked_at": "2026-10-09T05:16:04+00:00",
-      "estimate_gap": "缺少實作批次、完整規模與等待時間，不計完成百分比。",
+      "checked_at": "2026-10-13T15:11:12+00:00",
+      "estimate_gap": "停止無法核實的耗時與費用估算；token 節省尚未量化。",
       "purpose": "讓共用規則、專案歸屬、技能來源與雙 AI 驗收都有清楚依據。",
       "workstreams": [
         {
           "id": "A",
           "title": "共用開場規則",
           "status": "hold",
-          "summary": "四象限規則盤點已完成：155 條、44 條待裁、11 組重複；清理與正式落地尚未完成。",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：真實工作驗收持續：Codex C 唯讀核閱已完成，CC 交付仍待核。三視窗辨識完成：Desktop 2.1.295、Remote Control 本機 2.1.281、Terminal 2.1.281（自訂提示），同 main checkout、舊全文開場；比對基準已交並保存，非新版驗收 PASS。",
           "evidence": {
             "level": "handoff",
-            "source": "已核規則盤點與安全前置進度摘要（10/09）"
+            "source": "Controller 10/12 23:10 輪次交接：使用者裁示、唯讀核對及三視窗比對基準交付；本次未重掃或重做模型驗收。"
           },
           "blockers": [
-            "44 條規則待裁，重複內容清理尚未完成。",
-            "安全前置尚未正式掛載，正式 P／W02 尚未通過。"
+            "歷史交辦（10/13 已重置，非現行待辦）：Codex Q3 未批准；Claude Q3 的測試許可漏列補充檔，結果不能當作無保留通過。",
+            "歷史交辦（10/13 已重置，非現行待辦）：回報準確性與 memory 歸因仍有缺口；最新回報不構成整體 PASS，也不解除 NP 原安全門檻。"
           ],
           "next_steps": [
-            "完成待裁規則與重複內容的清理。",
-            "沿原安全門檻處理正式掛載及後續驗收。"
+            "歷史交辦（10/13 已重置，非現行待辦）：核對 CC 真實工作交付；三視窗辨識與基準文件已完成，不重跑辨識，也不將舊全文開場當成新版驗收。",
+            "歷史交辦（10/13 已重置，非現行待辦）：保留 Q3、回報準確性與 memory 歸因缺口；不修 update_gantt.py，不新增模型測試。"
           ],
-          "checked_at": "2026-10-09T05:11:22+00:00",
-          "estimate_gap": "需先鎖定採用版本、批次與放行前提；不彙總候選工時。",
+          "checked_at": "2026-10-13T09:12:10+00:00",
+          "estimate_gap": "token 節省尚未量化；不以不可核實的耗時或費用估算補進度。",
           "children": [
             {
               "id": "np",
               "title": "NP-PRH 安全前置",
               "status": "hold",
-              "summary": "驗證器修補及獨立審查完成；64 案合成資料離線 SCOPE PASS 已收束。10/09 21:49:13 曾啟用 W01，22:04:44 settings 磁碟恢復，runtime 未證；正式 P／W02 未通過，下輪 HOLD。",
+              "summary": "歷史交辦（10/13 已重置，非現行待辦）：驗證器修補及獨立審查完成；64 案合成資料離線 SCOPE PASS 已收束。10/09 21:49:13 曾啟用 W01，22:04:44 settings 磁碟恢復，runtime 未證；正式 P／W02 未通過，下輪 HOLD。",
               "evidence": {
                 "level": "handoff",
                 "source": "已核安全前置進度摘要（10/09）"
               },
               "blockers": [
-                "W01 已截止；下輪 HOLD，須重綁批准鏈。",
-                "正式 P／W02 尚未通過；離線限定範圍通過不等於正式驗收。",
-                "既有限制仍保留。"
+                "歷史交辦（10/13 已重置，非現行待辦）：W01 已截止；下輪 HOLD，須重綁批准鏈。",
+                "歷史交辦（10/13 已重置，非現行待辦）：正式 P／W02 尚未通過；離線限定範圍通過不等於正式驗收。",
+                "歷史交辦（10/13 已重置，非現行待辦）：既有限制仍保留。"
               ],
               "next_steps": [
-                "本人回到電腦後執行已批准的準備批次。",
-                "由既有執行線按原門檻完成 W01 掛載。",
-                "取得正式執行結果後再處理 P／W02 驗收。"
+                "歷史交辦（10/13 已重置，非現行待辦）：本人回到電腦後執行已批准的準備批次。",
+                "歷史交辦（10/13 已重置，非現行待辦）：由既有執行線按原門檻完成 W01 掛載。",
+                "歷史交辦（10/13 已重置，非現行待辦）：取得正式執行結果後再處理 P／W02 驗收。"
               ],
-              "checked_at": "2026-10-09T05:11:22+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "離線驗證已收束；正式掛載與驗收時程未定。",
               "milestones": [
                 {
@@ -82,12 +82,12 @@ window.PROGRESS_DATA = {
                     "source": "Controller 已接受的交接摘要"
                   },
                   "blockers": [
-                    "F34 限制仍在。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：F34 限制仍在。"
                   ],
                   "next_steps": [
-                    "後續依賴復原的操作沿既有界線處理。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：後續依賴復原的操作沿既有界線處理。"
                   ],
-                  "checked_at": "2026-10-08T05:30:33+00:00",
+                  "checked_at": "2026-10-13T09:12:10+00:00",
                   "estimate_gap": "此為已有結果；限制處理時間未知。",
                   "actual_start": null,
                   "actual_end": null,
@@ -114,9 +114,9 @@ window.PROGRESS_DATA = {
                   },
                   "blockers": [],
                   "next_steps": [
-                    "沿用已接受靜態結論；正式執行另依原門檻。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：沿用已接受靜態結論；正式執行另依原門檻。"
                   ],
-                  "checked_at": "2026-10-08T05:30:33+00:00",
+                  "checked_at": "2026-10-13T09:12:10+00:00",
                   "estimate_gap": "審查已接受；不代表工程已完成。",
                   "actual_start": null,
                   "actual_end": null,
@@ -143,9 +143,9 @@ window.PROGRESS_DATA = {
                   },
                   "blockers": [],
                   "next_steps": [
-                    "後續按既有檢查確認適用性。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：後續按既有檢查確認適用性。"
                   ],
-                  "checked_at": "2026-10-08T05:30:33+00:00",
+                  "checked_at": "2026-10-13T09:12:10+00:00",
                   "estimate_gap": "本頁未重做操作；無新增估時。",
                   "actual_start": null,
                   "actual_end": null,
@@ -171,12 +171,12 @@ window.PROGRESS_DATA = {
                     "source": "本機限定核證報告；檔案身分已核對"
                   },
                   "blockers": [
-                    "僅支持準備範圍，不是整體 Gate PASS。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：僅支持準備範圍，不是整體 Gate PASS。"
                   ],
                   "next_steps": [
-                    "後續仍須核對現況與取得對應批次授權。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：後續仍須核對現況與取得對應批次授權。"
                   ],
-                  "checked_at": "2026-10-08T06:49:51+00:00",
+                  "checked_at": "2026-10-13T09:12:10+00:00",
                   "estimate_gap": "下一批条件未齊；不推算完成時間。",
                   "observed_date": "2026-10-08",
                   "actual_start": null,
@@ -228,12 +228,12 @@ window.PROGRESS_DATA = {
                     "source": "Controller 最新核證交接；本頁未另行重驗執行"
                   },
                   "blockers": [
-                    "此為準備結果，不等於正式延期已生效或整體放行。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：此為準備結果，不等於正式延期已生效或整體放行。"
                   ],
                   "next_steps": [
-                    "由既有執行線核對準備結果，處理後續具體核准。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：由既有執行線核對準備結果，處理後續具體核准。"
                   ],
-                  "checked_at": "2026-10-08T06:49:51+00:00",
+                  "checked_at": "2026-10-13T09:12:10+00:00",
                   "estimate_gap": "本項已有成功回報；後續正式操作時間未定。",
                   "actual_start": null,
                   "actual_end": null,
@@ -284,12 +284,12 @@ window.PROGRESS_DATA = {
                     "source": "Ming 當次操作回報，由 Controller 轉交"
                   },
                   "blockers": [
-                    "只完成本次 dry-run；正式延期仍未生效。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：只完成本次 dry-run；正式延期仍未生效。"
                   ],
                   "next_steps": [
-                    "由既有執行線處理正式操作的其餘前提與具體核准。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：由既有執行線處理正式操作的其餘前提與具體核准。"
                   ],
-                  "checked_at": "2026-10-08T06:43:09+00:00",
+                  "checked_at": "2026-10-13T09:12:10+00:00",
                   "estimate_gap": "未提供實際開始時間或實工時；不能由完成時間反推。",
                   "actual_start": null,
                   "actual_end": "2026-10-08T14:29+08:00",
@@ -320,12 +320,12 @@ window.PROGRESS_DATA = {
                     "source": "已核進度摘要（10/09）"
                   },
                   "blockers": [
-                    "僅代表離線合成資料的限定範圍通過；不能替代正式掛載及驗收。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：僅代表離線合成資料的限定範圍通過；不能替代正式掛載及驗收。"
                   ],
                   "next_steps": [
-                    "保留已接受結論，繼續依原門檻處理正式操作。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：保留已接受結論，繼續依原門檻處理正式操作。"
                   ],
-                  "checked_at": "2026-10-09T05:11:22+00:00",
+                  "checked_at": "2026-10-13T09:12:10+00:00",
                   "estimate_gap": "已核 12:45 收束時間；真正開始時間與實工時未知。",
                   "actual_start": null,
                   "actual_end": "2026-10-09T12:45+08:00",
@@ -389,13 +389,13 @@ window.PROGRESS_DATA = {
                     "source": "stage3-prh 稽核紀錄與 W01 恢復收據（本機，10/09 夜核）"
                   },
                   "blockers": [
-                    "未捕獲合格 2c 事件。",
-                    "settings 退場後 runtime 狀態未證。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：未捕獲合格 2c 事件。",
+                    "歷史交辦（10/13 已重置，非現行待辦）：settings 退場後 runtime 狀態未證。"
                   ],
                   "next_steps": [
-                    "依 Controller 裁定處理到期後狀態與下一輪批准鏈。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：依 Controller 裁定處理到期後狀態與下一輪批准鏈。"
                   ],
-                  "checked_at": "2026-10-09T15:50:00+00:00",
+                  "checked_at": "2026-10-13T09:12:10+00:00",
                   "estimate_gap": "實際工時無紀錄；21:49–22:00 是窗口期，不是工時。",
                   "actual_start": null,
                   "actual_end": null,
@@ -448,19 +448,19 @@ window.PROGRESS_DATA = {
                   "id": "release",
                   "title": "正式掛載與下一批驗收",
                   "status": "hold",
-                  "summary": "10/09 21:49:13 曾啟用 W01，22:04:44 settings 磁碟恢復，runtime 未證；正式 P／W02 未通過，下輪 HOLD。64 案離線 SCOPE PASS 不解除正式門檻。",
+                  "summary": "歷史交辦（10/13 已重置，非現行待辦）：10/09 21:49:13 曾啟用 W01，22:04:44 settings 磁碟恢復，runtime 未證；正式 P／W02 未通過，下輪 HOLD。64 案離線 SCOPE PASS 不解除正式門檻。",
                   "evidence": {
                     "level": "mixed",
                     "source": "已核安全前置進度摘要（10/09）；stage3-prh 稽核紀錄與 W01 恢復收據（本機，10/09 夜核）"
                   },
                   "blockers": [
-                    "W01 曾啟用但未捕獲 2c；正式 P／W02 尚無通過結果。",
-                    "下輪 HOLD，須重綁批准鏈。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：W01 曾啟用但未捕獲 2c；正式 P／W02 尚無通過結果。",
+                    "歷史交辦（10/13 已重置，非現行待辦）：下輪 HOLD，須重綁批准鏈。"
                   ],
                   "next_steps": [
-                    "依 Controller 裁定；由既有執行線按原門檻進行下一輪。"
+                    "歷史交辦（10/13 已重置，非現行待辦）：依 Controller 裁定；由既有執行線按原門檻進行下一輪。"
                   ],
-                  "checked_at": "2026-10-09T15:50:00+00:00",
+                  "checked_at": "2026-10-13T09:12:10+00:00",
                   "estimate_gap": "前提與等待時間未定，無開始／結束日期。",
                   "actual_start": null,
                   "actual_end": null,
@@ -502,9 +502,9 @@ window.PROGRESS_DATA = {
               },
               "blockers": [],
               "next_steps": [
-                "逐項裁定並清理重複規則。"
+                "歷史交辦（10/13 已重置，非現行待辦）：逐項裁定並清理重複規則。"
               ],
-              "checked_at": "2026-10-09T05:11:22+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "未取得實際開始、結束與獨立計時資料；不推算工時或完成日期。",
               "actual_start": null,
               "actual_end": null,
@@ -555,27 +555,26 @@ window.PROGRESS_DATA = {
         {
           "id": "B",
           "title": "Codex 專案歸檔",
-          "status": "preparing",
-          "summary": "已有 56 項限定盤點與歷史資料；本輪歸檔工程尚未完成。共用雲端模擬原型完成、獨立複核通過，正式遷移另行驗收。",
+          "status": "hold",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：子頁 B 更新分工已確定由使用者轉交 CC，完整 prompt 已交付；尚無 CC 收件、開跑或完成回條，不宣稱正在修改或已上線。原報告與勘誤均為 10/11，10/12 是合併交付日；65 項範圍、48 項歷史待決不是今日重掃，正式搬移未核結。",
           "evidence": {
-            "level": "mixed",
-            "source": "既有限定盤點與已核進度摘要（10/09）"
+            "level": "handoff",
+            "source": "Controller 10/13 11:10 輪次交接：使用者 07:00 確認轉交 CC，主 chat 已交完整 B 更新 prompt；尚未收到 CC 回條。"
           },
           "blockers": [
-            "首批來源、歸屬與目的地待確認。",
-            "完整檔案清單、容量與活躍寫入者尚未核實。",
-            "一處來源遭作業系統拒讀，保留盤點缺口。"
+            "歷史交辦（10/13 已重置，非現行待辦）：尚無 CC 收件、開跑或完成回條；不再等待既有本機視窗代改許可。",
+            "歷史交辦（10/13 已重置，非現行待辦）：正式搬移仍未核結；本輪只有內容更新準備，非歸檔完成。"
           ],
           "next_steps": [
-            "先選首批範圍，補齊逐檔清單與保全需求。",
-            "備份與回復方式具體化後再送批次核准。"
+            "歷史交辦（10/13 已重置，非現行待辦）：等待 CC 回條；已交 prompt 限子頁 B 區段更新、備份與本機驗收，該次不 commit、push 或部署。",
+            "歷史交辦（10/13 已重置，非現行待辦）：子頁工作未完成，公開子頁與入口保留；下架工單暫停、排程已停用，完成且經使用者確認後再處理。"
           ],
-          "checked_at": "2026-10-09T05:16:04+00:00",
-          "estimate_gap": "僅有 56 項頂層盤點，並非完整容量；批數與實作估時未知。",
+          "checked_at": "2026-10-13T09:12:10+00:00",
+          "estimate_gap": "本輪沿用原報告加勘誤，不推算重掃、搬移耗時或費用。",
           "facts": [
-            "56 項頂層已盤點",
-            "本輪正式歸檔工程未完成",
-            "雲端模擬不代表正式遷移"
+            "10/11 原報告＋10/11 勘誤於 10/12 合併交付",
+            "65 項範圍及 48 項歷史待決，不是今日重掃",
+            "來源與子頁 B 目標已唯讀核對；完整更新 prompt 已交，由使用者轉交 CC，尚無收件或執行回條"
           ],
           "actual_start": null,
           "actual_end": null,
@@ -602,9 +601,9 @@ window.PROGRESS_DATA = {
               },
               "blockers": [],
               "next_steps": [
-                "補齊正式批次的完整清單與歸屬。"
+                "歷史交辦（10/13 已重置，非現行待辦）：補齊正式批次的完整清單與歸屬。"
               ],
-              "checked_at": "2026-10-08T06:49:51+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "只有觀察日，真正開始與交付鐘點未提供。",
               "actual_start": null,
               "actual_end": null,
@@ -634,27 +633,37 @@ window.PROGRESS_DATA = {
         {
           "id": "C",
           "title": "skills 共用",
-          "status": "preparing",
-          "summary": "本批限 ai-bridge（10/09 Ming 裁定；cross-review 停做、既有資料包保留）。ai-bridge 已有有界驗證回報，原證交接待核；自動派工驗收未完。D2 正式驗收排 W3 後。",
+          "status": "limited",
+          "summary": "cross-review Codex 專用版已交付，Codex 入口已改指專用版，Claude 原版及入口保留。最終 4307 bytes 版 frontmatter、連結、備份與 Claude 未變檢查通過；獨立新 session catalog 及兩個限制情境通過的是修訂前 4166 bytes 版，非實際跨模型或付費 API 測試。",
           "evidence": {
             "level": "mixed",
-            "source": "既有限定盤點與已核進度摘要（10/09）；C 計畫 10/09 範圍裁定段"
+            "source": "本機核讀 Codex cross-review 交付與驗證回條；Controller 10/13 23:10 交接：20:07 批准、20:18 交付。甘特本輪未重做技能或模型測試。"
           },
           "blockers": [
-            "有界驗證回報的原證交接待核。",
-            "自動派工驗收未完；D2 正式驗收排 W3 後。",
-            "文件落差：ai-bridge 手動限定已清除（現行 SKILL.md frontmatter 只有 name、description），C 計畫第 105、126 行仍寫原限定，待更新文字。"
+            "deep-research、stock-quote-refresh 專用版尚未批准，不自動製作。",
+            "cross-review 最終版只補未指定產物位置的處理；最終版本機檢查通過，獨立 session 尚未重新讀取最終版本，不能擴稱最終版模型行為已驗。"
           ],
           "next_steps": [
-            "原證交接後核對。",
-            "完成自動派工驗收；W3 後執行 D2。"
+            "保留 cross-review 已交付專用版與驗證版本界線；deep-research、stock-quote-refresh 如需製作，須另行批准；pending-plans-listing 已完成，不重跑。",
+            "保留 plugin 管理且版本不同的 Claude synced ai-bridge；不以代理計數為零推定零使用或刪除技能。"
           ],
-          "checked_at": "2026-10-09T15:50:00+00:00",
-          "estimate_gap": "本批只含 ai-bridge；其餘技能不在本批。實際工時無紀錄。",
+          "checked_at": "2026-10-13T15:11:12+00:00",
+          "estimate_gap": "使用統計僅 Claude history 的明確斜線指令代理計數；實際技能載入次數未知，不作 token 估算。",
           "facts": [
-            "24 份主文件已讀（歷史）",
-            "本批技能範圍限 ai-bridge",
-            "ai-bridge 兩端入口與本體清單已核（10/09 夜）"
+            "29 項相容性核對的分類基準為 2 可直接共用、24 工具專用、3 需專用版決策；其中 cross-review 後續已批准並交付，另外 2 項未批准",
+            "cross-review 最終版 4307 bytes；新 session catalog／兩限制情境驗的是 4166 bytes 修前版，未做跨模型或付費 API 實測",
+            "現況：Claude 直接 9、synced 16；Codex 直接由 3 增至 4，另有 5 個 .system 技能",
+            "新增 pending-plans-listing symlink；來源主檔未修改，未搬移技能，備份及靜態檢查通過",
+            "Claude synced ai-bridge 已確認為 plugin 管理的不同版本，保留",
+            "獨立新 session 自動列出 pending-plans-listing；skills.list 可發現，主檔／相依可讀，realpath 與 SHA 吻合",
+            "代理計數：gemini、skill-creator 各 1；其餘為 0 不代表實際零使用",
+            "歷史交辦（10/13 已重置，非現行待辦）：Claude 24 入口：6 實體、3 symlink、15 synced；Codex 8：3 symlink、5 .system；均含 SKILL.md",
+            "歷史交辦（10/13 已重置，非現行待辦）：兩個直接 ai-bridge 入口 symlink 至同一主檔；此部分可結清",
+            "歷史交辦（10/13 已重置，非現行待辦）：CLI 使用新版未驗；Claude synced 實體副本未比版本，不推定重複載入",
+            "歷史交辦（10/13 已重置，非現行待辦）：唯讀清單已交：Claude 24 入口、Codex 8 入口，均含 SKILL.md。兩個直接 ai-bridge 入口以 symlink 指向同一主檔，此主檔／連結部分可結清；CLI 使用新版未驗，尚非整體完成。",
+            "歷史交辦（10/13 已重置，非現行待辦）：CLI 是否使用新版尚未驗證；入口清單不是載入驗收。",
+            "歷史交辦（10/13 已重置，非現行待辦）：Claude 另有 synced 實體 ai-bridge 副本，版本尚未比對，不宣稱重複載入。",
+            "歷史交辦（10/13 已重置，非現行待辦）：保留已交唯讀清單與主檔／直接連結結論；CLI 使用版本及 synced 副本版本待後續核對，本輪不改刪 skill。"
           ],
           "actual_start": null,
           "actual_end": null,
@@ -681,9 +690,9 @@ window.PROGRESS_DATA = {
               },
               "blockers": [],
               "next_steps": [
-                "逐批核對完整附件及平台契約。"
+                "歷史交辦（10/13 已重置，非現行待辦）：逐批核對完整附件及平台契約。"
               ],
-              "checked_at": "2026-10-08T06:49:51+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "只有觀察日，真正开始與交付鐘點未提供。",
               "actual_start": null,
               "actual_end": null,
@@ -713,25 +722,25 @@ window.PROGRESS_DATA = {
         {
           "id": "D",
           "title": "整體驗收",
-          "status": "waiting",
-          "summary": "總計畫與四子計畫 04 版文書審查完成；A／B／C 本輪正式工程尚未完成，整體驗收也未完成。",
+          "status": "hold",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：改以真實工作接續驗收：Codex C 唯讀核閱已完成，CC 既有子頁維護回條待核。既有五題分題通過結果保留；Q3、回報準確性、memory 歸因及 CLI 載入仍有缺口，不能宣稱整體 PASS。",
           "evidence": {
             "level": "handoff",
-            "source": "已核整體進度摘要（10/09）"
+            "source": "Controller 10/12 23:10 輪次交接：使用者裁示、唯讀核對及三視窗比對基準交付；本次未重掃或重做模型驗收。"
           },
           "blockers": [
-            "A／B／C 尚未提供同版正式交付。",
-            "各平台實際行為與範圍排除仍須明確記錄。"
+            "歷史交辦（10/13 已重置，非現行待辦）：Codex Q3 未批准；Claude Q3 受測試許可漏列補充檔干擾。",
+            "歷史交辦（10/13 已重置，非現行待辦）：回報準確性與 memory 歸因缺口未閉合；尚缺 A／B／C 同版正式交付。"
           ],
           "next_steps": [
-            "可先建立範圍、平台、場景與證據矩陣。",
-            "取得 A／B／C 固定交付後逐項驗收。"
+            "歷史交辦（10/13 已重置，非現行待辦）：三視窗辨識與比對基準已完成並交付；同 main checkout 的舊全文開場不是新版驗收 PASS。CC 真實工作交付與其餘缺口仍待核。"
           ],
-          "checked_at": "2026-10-09T05:11:22+00:00",
+          "checked_at": "2026-10-13T09:12:10+00:00",
           "estimate_gap": "實際範圍、平台與場景組未定；無整體完成日期。",
           "facts": [
-            "04 版計畫文書已審",
-            "整體驗收未完成"
+            "04 版計畫文書已審（歷史）",
+            "Q1／Q2／Q4／Q5／Q6 雙 AI 按題目目標通過",
+            "Q3 不推定通過；整體 PASS 未成立"
           ],
           "actual_start": null,
           "actual_end": null,
@@ -760,9 +769,9 @@ window.PROGRESS_DATA = {
           },
           "blockers": [],
           "next_steps": [
-            "依已完成計畫準備各項具體工程批次；四項實作成果尚未完成。"
+            "歷史交辦（10/13 已重置，非現行待辦）：依已完成計畫準備各項具體工程批次；四項實作成果尚未完成。"
           ],
-          "checked_at": "2026-10-09T05:11:22+00:00",
+          "checked_at": "2026-10-13T09:12:10+00:00",
           "estimate_gap": "本次規劃文書已完成；工程工期另依各項實際批次確認。",
           "observed_date": "2026-10-08",
           "actual_start": null,
@@ -787,17 +796,17 @@ window.PROGRESS_DATA = {
             {
               "id": "plan05",
               "title": "05 全項計畫提案",
-              "status": "draft",
-              "summary": "05 新增範圍與工作包仍是未審提案；既有 04 審查完成狀態保留。",
+              "status": "hold",
+              "summary": "歷史交辦（10/13 已重置，非現行待辦）：05 新增範圍與工作包仍是未審提案；既有 04 審查完成狀態保留。",
               "evidence": {
                 "level": "local",
                 "source": "05 文書提案及日期證據表"
               },
               "blockers": [],
               "next_steps": [
-                "由既有主持線核定新增範圍；不據此執行工程。"
+                "歷史交辦（10/13 已重置，非現行待辦）：由既有主持線核定新增範圍；不據此執行工程。"
               ],
-              "checked_at": "2026-10-08T06:49:51+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "尚未審查或核定新增範圍，不能承諾工程工期。",
               "actual_start": null,
               "actual_end": null,
@@ -826,9 +835,9 @@ window.PROGRESS_DATA = {
           },
           "blockers": [],
           "next_steps": [
-            "保留審查與閉合紀錄，後續工程仍按各項批次執行。"
+            "歷史交辦（10/13 已重置，非現行待辦）：保留審查與閉合紀錄，後續工程仍按各項批次執行。"
           ],
-          "checked_at": "2026-10-09T05:11:22+00:00",
+          "checked_at": "2026-10-13T09:12:10+00:00",
           "estimate_gap": "本次計畫審查已完成；不追加 r2 日程。",
           "actual_start": null,
           "actual_end": "2026-10-08",
@@ -862,9 +871,9 @@ window.PROGRESS_DATA = {
           },
           "blockers": [],
           "next_steps": [
-            "保留歷史里程碑，不重做遷移。"
+            "歷史交辦（10/13 已重置，非現行待辦）：保留歷史里程碑，不重做遷移。"
           ],
-          "checked_at": "2026-10-08T06:49:51+00:00",
+          "checked_at": "2026-10-13T09:12:10+00:00",
           "estimate_gap": "完成日期未提供；不補填。",
           "observed_date": null,
           "actual_start": null,
@@ -892,9 +901,9 @@ window.PROGRESS_DATA = {
           },
           "blockers": [],
           "next_steps": [
-            "保留歷史里程碑，不重做改名。"
+            "歷史交辦（10/13 已重置，非現行待辦）：保留歷史里程碑，不重做改名。"
           ],
-          "checked_at": "2026-10-08T06:49:51+00:00",
+          "checked_at": "2026-10-13T09:12:10+00:00",
           "estimate_gap": "完成日期未提供；不補填。",
           "observed_date": null,
           "actual_start": null,
@@ -922,9 +931,9 @@ window.PROGRESS_DATA = {
               },
               "blockers": [],
               "next_steps": [
-                "保留既有完成結果，不重做服務恢復。"
+                "歷史交辦（10/13 已重置，非現行待辦）：保留既有完成結果，不重做服務恢復。"
               ],
-              "checked_at": "2026-10-08T06:49:51+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "回條時刻不是 runner 結束時刻；實工時未知。",
               "actual_start": null,
               "actual_end": null,
@@ -960,9 +969,9 @@ window.PROGRESS_DATA = {
               },
               "blockers": [],
               "next_steps": [
-                "保留自然執行結果，不以重跑替代。"
+                "歷史交辦（10/13 已重置，非現行待辦）：保留自然執行結果，不以重跑替代。"
               ],
-              "checked_at": "2026-10-08T06:49:51+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "未提供人工／agent 主動工時；機器時間不能當整案工時。",
               "actual_start": "2026-09-30T06:30:04+08:00",
               "actual_end": "2026-09-30T06:34:21+08:00",
@@ -999,9 +1008,9 @@ window.PROGRESS_DATA = {
               },
               "blockers": [],
               "next_steps": [
-                "保留已核判定，不重做主體。"
+                "歷史交辦（10/13 已重置，非現行待辦）：保留已核判定，不重做主體。"
               ],
-              "checked_at": "2026-10-08T06:49:51+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "開始及主動工時未知；跨夜等待不算工作量。",
               "actual_start": null,
               "actual_end": "2026-09-30T07:00:46+08:00",
@@ -1033,9 +1042,9 @@ window.PROGRESS_DATA = {
               },
               "blockers": [],
               "next_steps": [
-                "保留確認與通告紀錄；各線完成回報另核。"
+                "歷史交辦（10/13 已重置，非現行待辦）：保留確認與通告紀錄；各線完成回報另核。"
               ],
-              "checked_at": "2026-10-08T06:49:51+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "只有完成紀錄上限，不能算各操作起訖或實工時。",
               "actual_start": null,
               "actual_end": null,
@@ -1071,9 +1080,9 @@ window.PROGRESS_DATA = {
               },
               "blockers": [],
               "next_steps": [
-                "交原負責線整合後續事項；不視為步8整體完成。"
+                "歷史交辦（10/13 已重置，非現行待辦）：交原負責線整合後續事項；不視為步8整體完成。"
               ],
-              "checked_at": "2026-10-08T06:49:51+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "快照至落檔僅為紀錄間隔，不能算整趟耗時。",
               "actual_start": null,
               "actual_end": "2026-10-08T06:29:58.462356+00:00",
@@ -1106,17 +1115,17 @@ window.PROGRESS_DATA = {
             {
               "id": "h2-step8-review",
               "title": "②步8 最早評估",
-              "status": "waiting",
-              "summary": "最早 10/13 起才可評估；仍須前提齊備及另行授權，不是必刪日，也不會到期自動執行。",
+              "status": "hold",
+              "summary": "歷史交辦（10/13 已重置，非現行待辦）：最早 10/13 起才可評估；仍須前提齊備及另行授權，不是必刪日，也不會到期自動執行。",
               "evidence": {
                 "level": "local",
                 "source": "05 日期證據表（已核歷史來源摘要） DT15／既有觀察門檻"
               },
               "blockers": [],
               "next_steps": [
-                "到最早評估點後，核對觀察證據與其餘前提。"
+                "歷史交辦（10/13 已重置，非現行待辦）：到最早評估點後，核對觀察證據與其餘前提。"
               ],
-              "checked_at": "2026-10-09T05:11:22+00:00",
+              "checked_at": "2026-10-13T09:12:10+00:00",
               "estimate_gap": "14 日是觀察門檻，不是人工工作量；主動工時待核。",
               "actual_start": null,
               "actual_end": null,
@@ -1169,9 +1178,9 @@ window.PROGRESS_DATA = {
           },
           "blockers": [],
           "next_steps": [
-            "正式遷移與平台載入仍須另依核准範圍驗證。"
+            "歷史交辦（10/13 已重置，非現行待辦）：正式遷移與平台載入仍須另依核准範圍驗證。"
           ],
-          "checked_at": "2026-10-09T05:16:04+00:00",
+          "checked_at": "2026-10-13T09:12:10+00:00",
           "estimate_gap": "實際完成日已核為 10/09；真正開始時間與實工時未提供，不推算工期。",
           "actual_start": null,
           "actual_end": "2026-10-09",
@@ -1201,24 +1210,29 @@ window.PROGRESS_DATA = {
           "machine_runtime_seconds": null,
           "machine_runtime_source": null
         }
+      ],
+      "facts": [
+        "歷史交辦（10/13 已重置，非現行待辦）：A 真實工作 CC 交付仍待核；三視窗辨識及比對基準已交，屬舊全文開場，非新版驗收 PASS。B 子頁更新 prompt 已交付，分工確定由使用者轉交 CC；尚無 CC 收件或執行回條；C 主檔／直接連結已核、CLI 新版未驗，尚無整體 PASS。",
+        "歷史交辦（10/13 已重置，非現行待辦）：CC 真實工作回條待核；C CLI 使用新版與 synced 副本版本未驗；B 正式搬移未核結，D 未整體驗收。",
+        "歷史交辦（10/13 已重置，非現行待辦）：換的是 ChatGPT 帳號，同 Mac、同 macOS 使用者，資料原位；新四步設計已交，尚未切換。",
+        "歷史交辦（10/13 已重置，非現行待辦）：三視窗辨識與比對基準已交付、本機保存及指紋核對通過；舊全文開場結果不算新版驗收。",
+        "歷史交辦（10/13 已重置，非現行待辦）：公開子頁與入口保留；下架工單暫停、下架排程已停用，完成並經使用者確認後再處理。"
       ]
     },
     {
       "id": "documents",
       "title": "計畫文件整理",
-      "status": "active",
-      "summary": "計畫目錄已由 69 項整理為 28 項，保留 5 份固定主檔＋1 份 CC 活動檔；必要長期資料保全已完成。21 項分類統計保留為 10/08 基準。",
+      "status": "hold",
+      "summary": "歷史交辦（10/13 已重置，非現行待辦）：使用者回報 CC 今早已盤點整理 pending，暫緩至 2026-10-19 再看，不列當下阻塞；pending-03 舊文件已交付。原目錄整併與保全紀錄、10/08 分類基準保留。",
       "evidence": {
         "level": "handoff",
-        "source": "已核文件整理與保全進度摘要（10/09）"
+        "source": "Controller 10/12 最新進度交接；本次僅核對甘特資料，未重查原檔或重跑模型測試。"
       },
-      "blockers": [
-        "10/08 分類基準中的個別不確定事項，本次未取得逐項重判結果。"
-      ],
+      "blockers": [],
       "next_steps": [
-        "維持固定主檔與活動檔的分工；後續變更逐項核對。"
+        "歷史交辦（10/13 已重置，非現行待辦）：2026-10-19 再看 pending；此前不列當下阻塞，也不將 pending-03 舊文件標為整份未交。"
       ],
-      "checked_at": "2026-10-09T05:11:22+00:00",
+      "checked_at": "2026-10-13T09:12:10+00:00",
       "estimate_gap": "目錄整併與必要保全已完成；未取得可換算實工時的起訖紀錄。",
       "purpose": "看清每份計畫在做什麼、做到哪裡，以及該放在哪裡。",
       "categories": [
@@ -1262,9 +1276,9 @@ window.PROGRESS_DATA = {
           },
           "blockers": [],
           "next_steps": [
-            "維持已保全資料及後續異動紀錄。"
+            "歷史交辦（10/13 已重置，非現行待辦）：維持已保全資料及後續異動紀錄。"
           ],
-          "checked_at": "2026-10-09T05:11:22+00:00",
+          "checked_at": "2026-10-13T09:12:10+00:00",
           "estimate_gap": "完成狀態已回報，精確作業起訖與實工時未提供。",
           "actual_start": null,
           "actual_end": null,
@@ -1300,9 +1314,9 @@ window.PROGRESS_DATA = {
           },
           "blockers": [],
           "next_steps": [
-            "維持固定主檔、活動檔與索引連結。"
+            "歷史交辦（10/13 已重置，非現行待辦）：維持固定主檔、活動檔與索引連結。"
           ],
-          "checked_at": "2026-10-09T05:11:22+00:00",
+          "checked_at": "2026-10-13T09:12:10+00:00",
           "estimate_gap": "未取得作業起訖與實工時；完成回報不能換算工期。",
           "actual_start": null,
           "actual_end": null,
@@ -1360,7 +1374,7 @@ window.PROGRESS_DATA = {
           "id": "ga",
           "kind": "group",
           "title": "A 共用開場規則",
-          "note": "155 條已盤點；清理未完"
+          "note": "歷史交辦已重置；未重新派工。三視窗辨識已交；非新版驗收"
         },
         {
           "id": "a-plan",
@@ -1369,11 +1383,11 @@ window.PROGRESS_DATA = {
           "source_id": "A",
           "phase": 0,
           "phase_end": 1,
-          "status": "preparing",
+          "status": "hold",
           "deps": [],
-          "note": "44 待裁／11 重複",
-          "summary": "規則盤點完成，待裁及重複內容清理尚未完成。",
-          "next_step": "完成逐項裁定與清理，再固定實作批次。",
+          "note": "歷史／未重新派工；三視窗基準已交；CC 交付待核",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：真實工作驗收持續：Codex C 唯讀核閱已完成，CC 交付仍待核。三視窗辨識完成：Desktop 2.1.295、Remote Control 本機 2.1.281、Terminal 2.1.281（自訂提示），同 main checkout、舊全文開場；比對基準已交並保存，非新版驗收 PASS。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：核對 CC 真實工作交付；三視窗辨識與基準文件已完成，不重跑辨識，也不將舊全文開場當成新版驗收。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1389,7 +1403,7 @@ window.PROGRESS_DATA = {
           "deps": [],
           "note": "155 條；清理另行",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": false
         },
         {
@@ -1403,7 +1417,7 @@ window.PROGRESS_DATA = {
           "deps": [],
           "note": "M7／M1 已核",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": true,
           "timing_source_id": "m7m1"
         },
@@ -1420,7 +1434,7 @@ window.PROGRESS_DATA = {
           ],
           "note": "M3／S0 本次通過",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": true,
           "timing_source_id": "m3s0"
         },
@@ -1437,8 +1451,8 @@ window.PROGRESS_DATA = {
             "np-m3"
           ],
           "note": "10/08 14:29 完成",
-          "summary": "本次 dry-run 成功且無寫入；正式延期仍未生效。",
-          "next_step": "等待原負責線處理正式操作的其餘前提。",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：本次 dry-run 成功且無寫入；正式延期仍未生效。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：等待原負責線處理正式操作的其餘前提。",
           "nested": true
         },
         {
@@ -1453,7 +1467,7 @@ window.PROGRESS_DATA = {
           "deps": [],
           "note": "10/09 12:45 SCOPE PASS",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": true
         },
         {
@@ -1464,11 +1478,11 @@ window.PROGRESS_DATA = {
           "timing_source_id": "np-session-prepare",
           "phase": 2,
           "phase_end": 2,
-          "status": "limited",
+          "status": "hold",
           "deps": [],
-          "note": "10/09 21:49 建窗；22:00 截止",
+          "note": "歷史／未重新派工；10/09 21:49 建窗；22:00 截止",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": true
         },
         {
@@ -1482,9 +1496,9 @@ window.PROGRESS_DATA = {
           "deps": [
             "np-m3"
           ],
-          "note": "21:49:13 曾啟用；22:04:44 磁碟恢復；下輪 HOLD",
-          "summary": "曾啟用並磁碟退場，正式驗收未完；下輪待新批准。",
-          "next_step": "曾啟用並磁碟退場，正式驗收未完；下輪待新批准。",
+          "note": "歷史／未重新派工；21:49:13 曾啟用；22:04:44 磁碟恢復；下輪 HOLD",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：曾啟用並磁碟退場，正式驗收未完；下輪待新批准。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：曾啟用並磁碟退場，正式驗收未完；下輪待新批准。",
           "nested": true,
           "timing_source_id": null
         },
@@ -1495,13 +1509,13 @@ window.PROGRESS_DATA = {
           "source_id": "A",
           "phase": 2,
           "phase_end": 2,
-          "status": "waiting",
+          "status": "hold",
           "deps": [
             "a-plan"
           ],
-          "note": "待批次核准",
-          "summary": "在核准範圍完成規則實作與隔離驗證，尚未執行。",
-          "next_step": "先完成規則與批次準備，再按核准範圍實作。",
+          "note": "歷史／未重新派工；三視窗基準已交；CC 交付待核",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：真實工作驗收持續：Codex C 唯讀核閱已完成，CC 交付仍待核。三視窗辨識完成：Desktop 2.1.295、Remote Control 本機 2.1.281、Terminal 2.1.281（自訂提示），同 main checkout、舊全文開場；比對基準已交並保存，非新版驗收 PASS。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：核對 CC 真實工作交付；三視窗辨識與基準文件已完成，不重跑辨識，也不將舊全文開場當成新版驗收。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1512,14 +1526,14 @@ window.PROGRESS_DATA = {
           "source_id": "A",
           "phase": 3,
           "phase_end": 3,
-          "status": "waiting",
+          "status": "hold",
           "deps": [
             "np-release",
             "a-implement"
           ],
-          "note": "等安全前置＋實作",
-          "summary": "規則實作與安全前置齊備後，才可正式切換並交驗。",
-          "next_step": "等待兩項前置與原負責線放行。",
+          "note": "歷史／未重新派工；等安全前置＋實作",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：規則實作與安全前置齊備後，才可正式切換並交驗。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：等待兩項前置與原負責線放行。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1527,7 +1541,7 @@ window.PROGRESS_DATA = {
           "id": "gb",
           "kind": "group",
           "title": "B Codex 專案歸檔",
-          "note": "盤點已交；本輪工程未完"
+          "note": "歷史交辦已重置；未重新派工。B 更新 prompt 已交；待 CC 回條"
         },
         {
           "id": "b-inventory-fact",
@@ -1541,7 +1555,7 @@ window.PROGRESS_DATA = {
           "deps": [],
           "note": "10/08 UTC 觀察",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": false
         },
         {
@@ -1551,11 +1565,11 @@ window.PROGRESS_DATA = {
           "source_id": "B",
           "phase": 0,
           "phase_end": 1,
-          "status": "preparing",
+          "status": "hold",
           "deps": [],
-          "note": "歸屬／完整清單待補",
-          "summary": "已有限定頂層盤點，完整清單、來源歸屬與批次方案待完成。",
-          "next_step": "選首批範圍，補齊完整清單及遷移方案。",
+          "note": "歷史／未重新派工；使用者轉交 CC；尚無執行回條",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：子頁 B 更新分工已確定由使用者轉交 CC，完整 prompt 已交付；尚無 CC 收件、開跑或完成回條，不宣稱正在修改或已上線。原報告與勘誤均為 10/11，10/12 是合併交付日；65 項範圍、48 項歷史待決不是今日重掃，正式搬移未核結。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：等待 CC 回條；已交 prompt 限子頁 B 區段更新、備份與本機驗收，該次不 commit、push 或部署。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1571,7 +1585,7 @@ window.PROGRESS_DATA = {
           "deps": [],
           "note": "原型完成；29 項及獨立複核通過",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": false
         },
         {
@@ -1581,13 +1595,13 @@ window.PROGRESS_DATA = {
           "source_id": "B",
           "phase": 2,
           "phase_end": 2,
-          "status": "waiting",
+          "status": "hold",
           "deps": [
             "b-plan"
           ],
-          "note": "未複製",
-          "summary": "批次核准後複製並核對完整性；目前尚未執行。",
-          "next_step": "先完成並核准具體批次。",
+          "note": "歷史／未重新派工；試搬不等於正式核結",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：已有盤點／試搬回報；正式搬移與完整性核結仍待原負責線確認，本次不重查檔案。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：由原負責線區分盤點、試搬與正式搬移證據，按既有批次核對結案條件。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1598,13 +1612,13 @@ window.PROGRESS_DATA = {
           "source_id": "B",
           "phase": 3,
           "phase_end": 3,
-          "status": "waiting",
+          "status": "hold",
           "deps": [
             "b-copy"
           ],
-          "note": "未切換",
-          "summary": "複製核對完成後，依已核範圍切換、驗證並交付。",
-          "next_step": "等待複製核對完成及個別切換核准。",
+          "note": "歷史／未重新派工；未切換",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：複製核對完成後，依已核範圍切換、驗證並交付。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：等待複製核對完成及個別切換核准。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1612,7 +1626,7 @@ window.PROGRESS_DATA = {
           "id": "gc",
           "kind": "group",
           "title": "C skills 共用",
-          "note": "盤點及歷史資料已有；工程未完"
+          "note": "cross-review 專用版已交；另 2 項未批准"
         },
         {
           "id": "c-inventory-fact",
@@ -1626,7 +1640,7 @@ window.PROGRESS_DATA = {
           "deps": [],
           "note": "10/08 UTC 觀察",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": false
         },
         {
@@ -1636,11 +1650,11 @@ window.PROGRESS_DATA = {
           "source_id": "C",
           "phase": 0,
           "phase_end": 1,
-          "status": "limited",
+          "status": "done",
           "deps": [],
-          "note": "有界驗證已回報；原證待核",
-          "summary": "ai-bridge 已有有界驗證回報，原證交接待核；自動派工驗收未完。",
-          "next_step": "原證交接後核對。",
+          "note": "29 項分類已核；1 專用版已交",
+          "summary": "29 項相容性核對已完成；原需專用版決策的 3 項中，cross-review 已批准並交付，deep-research、stock-quote-refresh 尚未批准。使用次數僅為明確斜線指令代理計數。",
+          "next_step": "保留 cross-review 已交付專用版與驗證版本界線；deep-research、stock-quote-refresh 如需製作，須另行批准；pending-plans-listing 已完成，不重跑。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1651,13 +1665,13 @@ window.PROGRESS_DATA = {
           "source_id": "C",
           "phase": 2,
           "phase_end": 2,
-          "status": "waiting",
+          "status": "limited",
           "deps": [
             "c-plan"
           ],
-          "note": "自動派工驗收未完",
-          "summary": "ai-bridge 已有有界驗證回報，原證交接待核；自動派工驗收未完。本體已在 repo、兩端連結已存在；C3／C4 是否改 N/A 待裁。",
-          "next_step": "完成自動派工驗收；依裁定標 C3／C4。",
+          "note": "cross-review Codex 版已交付",
+          "summary": "cross-review Codex 專用版及入口已完成；Claude 原版與入口保留。pending-plans-listing 共用入口已完成，不重跑。",
+          "next_step": "保留 cross-review 已交付專用版與驗證版本界線；deep-research、stock-quote-refresh 如需製作，須另行批准；pending-plans-listing 已完成，不重跑。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1668,13 +1682,13 @@ window.PROGRESS_DATA = {
           "source_id": "C",
           "phase": 3,
           "phase_end": 3,
-          "status": "waiting",
+          "status": "limited",
           "deps": [
             "c-build"
           ],
-          "note": "尚未載入驗收",
-          "summary": "套件建立完成後，逐平台驗證入口、載入及適用行為。",
-          "next_step": "等待套件核對完成，再於核准窗口驗收。",
+          "note": "修前版獨立驗證／最終版本機驗證",
+          "summary": "cross-review Codex 專用版已交付，Codex 入口已改指專用版，Claude 原版及入口保留。最終 4307 bytes 版 frontmatter、連結、備份與 Claude 未變檢查通過；獨立新 session catalog 及兩個限制情境通過的是修訂前 4166 bytes 版，非實際跨模型或付費 API 測試。",
+          "next_step": "保留 cross-review 已交付專用版與驗證版本界線；deep-research、stock-quote-refresh 如需製作，須另行批准；pending-plans-listing 已完成，不重跑。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1682,7 +1696,7 @@ window.PROGRESS_DATA = {
           "id": "gd",
           "kind": "group",
           "title": "D 整體驗收",
-          "note": "正式驗收尚未開始"
+          "note": "歷史交辦已重置；未重新派工。真實工作回條接續核對；非整體 PASS"
         },
         {
           "id": "d-plan",
@@ -1691,11 +1705,11 @@ window.PROGRESS_DATA = {
           "source_id": "D",
           "phase": 0,
           "phase_end": 1,
-          "status": "preparing",
+          "status": "hold",
           "deps": [],
-          "note": "04 文書已審；工程未驗",
-          "summary": "04 版計畫文書審查完成；正式工程交付與整體驗收尚未完成。",
-          "next_step": "先完成範圍與驗收場景的對照。",
+          "note": "歷史／未重新派工；Codex 實務已核；CC 回條待核",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：改以真實工作接續驗收：Codex C 唯讀核閱已完成，CC 既有子頁維護回條待核。既有五題分題通過結果保留；Q3、回報準確性、memory 歸因及 CLI 載入仍有缺口，不能宣稱整體 PASS。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：三視窗辨識與比對基準已完成並交付；同 main checkout 的舊全文開場不是新版驗收 PASS。CC 真實工作交付與其餘缺口仍待核。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1706,16 +1720,16 @@ window.PROGRESS_DATA = {
           "source_id": "D",
           "phase": 4,
           "phase_end": 4,
-          "status": "waiting",
+          "status": "hold",
           "deps": [
             "a-switch",
             "b-deliver",
             "c-deliver",
             "d-plan"
           ],
-          "note": "等 A／B／C 同版交付",
-          "summary": "對同版 A／B／C 交付進行必要驗收，不重複計算已共用的分項證據。",
-          "next_step": "取得各項固定交付及相應測試核准。",
+          "note": "歷史／未重新派工；等 A／B／C 同版交付",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：對同版 A／B／C 交付進行必要驗收，不重複計算已共用的分項證據。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：取得各項固定交付及相應測試核准。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1726,13 +1740,13 @@ window.PROGRESS_DATA = {
           "source_id": "D",
           "phase": 5,
           "phase_end": 5,
-          "status": "waiting",
+          "status": "hold",
           "deps": [
             "d-test"
           ],
-          "note": "尚無整體 PASS",
-          "summary": "驗收證據齊備後，彙整未完成事項、限制與完成裁決。",
-          "next_step": "等待整體驗收與殘留事項處置。",
+          "note": "歷史／未重新派工；尚無整體 PASS",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：驗收證據齊備後，彙整未完成事項、限制與完成裁決。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：等待整體驗收與殘留事項處置。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1740,7 +1754,7 @@ window.PROGRESS_DATA = {
           "id": "gg",
           "kind": "group",
           "title": "共同計畫與審查",
-          "note": "04 文書審完成；非工程完工"
+          "note": "歷史交辦已重置；未重新派工。04 文書審完成；非工程完工"
         },
         {
           "id": "g-review",
@@ -1753,7 +1767,7 @@ window.PROGRESS_DATA = {
           "deps": [],
           "note": "10/08 核定；3 項閉合",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": false,
           "timing_source_id": "review"
         },
@@ -1770,7 +1784,7 @@ window.PROGRESS_DATA = {
           ],
           "note": "10/08 完成；不需 r2",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": false,
           "timing_source_id": "plans"
         },
@@ -1782,11 +1796,11 @@ window.PROGRESS_DATA = {
           "timing_source_id": "plan05",
           "phase": 1,
           "phase_end": 1,
-          "status": "draft",
+          "status": "hold",
           "deps": [],
-          "note": "提案；尚未審查",
+          "note": "歷史／未重新派工；提案；尚未審查",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": false
         }
       ]
@@ -1808,8 +1822,8 @@ window.PROGRESS_DATA = {
           "status": "done",
           "deps": [],
           "note": "10/08 分類基準：21 項",
-          "summary": "限定分類報告已交付；此報告本身為唯讀，後續目錄整併另列。",
-          "next_step": "後續變更逐項核對。",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：限定分類報告已交付；此報告本身為唯讀，後續目錄整併另列。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：後續變更逐項核對。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1820,13 +1834,13 @@ window.PROGRESS_DATA = {
           "source_id": "documents",
           "phase": 1,
           "phase_end": 1,
-          "status": "waiting",
+          "status": "hold",
           "deps": [
             "docs-report"
           ],
-          "note": "10/08 基準；本次未重判",
-          "summary": "保留歷史分類中的不確定事項；本次未取得逐項重判結果。",
-          "next_step": "逐項核對不確定清單與處置。",
+          "note": "歷史／未重新派工；pending 延至 10/19 再看",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：使用者回報 CC 今早已盤點整理 pending，暫緩至 2026-10-19 再看，不列當下阻塞；pending-03 舊文件已交付。原目錄整併與保全紀錄、10/08 分類基準保留。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：2026-10-19 再看 pending；此前不列當下阻塞，也不將 pending-03 舊文件標為整份未交。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1837,13 +1851,13 @@ window.PROGRESS_DATA = {
           "source_id": "documents",
           "phase": 2,
           "phase_end": 2,
-          "status": "waiting",
+          "status": "hold",
           "deps": [
             "docs-review"
           ],
-          "note": "剩餘事項待個別裁定",
-          "summary": "計畫目錄整併已完成；其餘文件是否調整位置仍待個別裁定。",
-          "next_step": "先完成審閱與個別裁定，保留在途文件。",
+          "note": "歷史／未重新派工；目前不列 pending 阻塞",
+          "summary": "歷史交辦（10/13 已重置，非現行待辦）：pending 今早已盤點整理（使用者回報）；暫緩至 10/19 再看。pending-03 舊文件已交付，剩餘事項不等於整份未交。",
+          "next_step": "歷史交辦（10/13 已重置，非現行待辦）：2026-10-19 再看 pending；此前不列當下阻塞，也不將 pending-03 舊文件標為整份未交。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1859,7 +1873,7 @@ window.PROGRESS_DATA = {
           "deps": [],
           "note": "必要保全已完成",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": false
         },
         {
@@ -1874,7 +1888,7 @@ window.PROGRESS_DATA = {
           "deps": [],
           "note": "69 → 28；5 固定＋1 活動",
           "summary": "",
-          "next_step": "",
+          "next_step": "舊交辦已重置，未重新派工；僅保留歷史結果，不恢復舊待辦。",
           "nested": false
         }
       ]
