@@ -2,8 +2,8 @@
   "schema_version": 1,
   "meta": {
     "title": "雙 AI 整合進度",
-    "updated_at": "2026-10-13T15:11:12+00:00",
-    "revision": "20261013-03",
+    "updated_at": "2026-10-13T21:11:49+00:00",
+    "revision": "20261014-01",
     "snapshot_notice": "資料快照，非即時",
     "sync_status": "manual_snapshot",
     "sync_note": "使用者已重置舊交辦；現行工作為新 C 技能共用。歷史階段與依賴保留，不代表恢復舊任務；本頁仍為人工核對快照。",
@@ -14,18 +14,18 @@
       "id": "integration",
       "title": "雙 AI 工作環境整合",
       "status": "active",
-      "summary": "舊交辦已重置，歷史資料保留。新 C 已完成分類與安全共用驗證；cross-review Codex 專用版已依新批准製作交付，Claude 原版保留。deep-research、stock-quote-refresh 專用版尚未批准，不自動製作。",
+      "summary": "舊交辦已重置，歷史資料保留。新 C 已完成分類與安全共用驗證；cross-review、deep-research Codex 專用版均已批准並交付，Claude 原版保留。stock-quote-refresh 尚未獲改寫授權，不自動製作。",
       "evidence": {
         "level": "mixed",
-        "source": "本機核讀 Codex cross-review 交付與驗證回條；Controller 10/13 23:10 交接：20:07 批准、20:18 交付。甘特本輪未重做技能或模型測試。"
+        "source": "保留已核 cross-review 回條；本輪核讀 Codex deep-research 交付與驗證報告，依 Controller 10/14 05:10 交接記錄 10/13 23:47 批准、23:56 交付。未重做技能測試。"
       },
       "blockers": [
-        "deep-research、stock-quote-refresh 專用版尚未批准；cross-review 新 session 限制情境驗證只涵蓋修訂前版，最終版未重做獨立模型行為驗證。"
+        "stock-quote-refresh 專用版尚未批准；cross-review 新 session 限制情境驗證只涵蓋修訂前版，最終版未重做獨立模型行為驗證。"
       ],
       "next_steps": [
-        "保留已完成的安全共用與 cross-review 專用版交付；另外兩項專用版須另行批准，不自動製作、不恢復舊交辦。"
+        "保留已完成的安全共用、cross-review 與 deep-research 專用版交付；stock-quote-refresh 須另行批准，不自動製作、不恢復舊交辦。"
       ],
-      "checked_at": "2026-10-13T15:11:12+00:00",
+      "checked_at": "2026-10-13T21:11:49+00:00",
       "estimate_gap": "停止無法核實的耗時與費用估算；token 節省尚未量化。",
       "purpose": "讓共用規則、專案歸屬、技能來源與雙 AI 驗收都有清楚依據。",
       "workstreams": [
@@ -633,24 +633,25 @@
           "id": "C",
           "title": "skills 共用",
           "status": "limited",
-          "summary": "cross-review Codex 專用版已交付，Codex 入口已改指專用版，Claude 原版及入口保留。最終 4307 bytes 版 frontmatter、連結、備份與 Claude 未變檢查通過；獨立新 session catalog 及兩個限制情境通過的是修訂前 4166 bytes 版，非實際跨模型或付費 API 測試。",
+          "summary": "cross-review Codex 專用版已交付，Codex 入口已改指專用版，Claude 原版及入口保留。最終 4307 bytes 版 frontmatter、連結、備份與 Claude 未變檢查通過；獨立新 session catalog 及兩個限制情境通過的是修訂前 4166 bytes 版，非實際跨模型或付費 API 測試。 deep-research 3611 bytes 專用版及 Codex 入口已交付；獨立新 session catalog、入口／內容身分及來源不足、無分工工具、私人資料三項受限情境通過，Claude 原版及參照檔未變；未執行真實研究或外部 API。",
           "evidence": {
             "level": "mixed",
-            "source": "本機核讀 Codex cross-review 交付與驗證回條；Controller 10/13 23:10 交接：20:07 批准、20:18 交付。甘特本輪未重做技能或模型測試。"
+            "source": "保留已核 cross-review 回條；本輪核讀 Codex deep-research 交付與驗證報告，依 Controller 10/14 05:10 交接記錄 10/13 23:47 批准、23:56 交付。未重做技能測試。"
           },
           "blockers": [
-            "deep-research、stock-quote-refresh 專用版尚未批准，不自動製作。",
+            "stock-quote-refresh 專用版尚未獲改寫授權，不自動製作。",
             "cross-review 最終版只補未指定產物位置的處理；最終版本機檢查通過，獨立 session 尚未重新讀取最終版本，不能擴稱最終版模型行為已驗。"
           ],
           "next_steps": [
-            "保留 cross-review 已交付專用版與驗證版本界線；deep-research、stock-quote-refresh 如需製作，須另行批准；pending-plans-listing 已完成，不重跑。",
+            "保留 cross-review 的驗證版本界線與 deep-research 已通過的受限情境驗證；stock-quote-refresh 如需製作須另行批准。pending-plans-listing 已完成，不重跑。",
             "保留 plugin 管理且版本不同的 Claude synced ai-bridge；不以代理計數為零推定零使用或刪除技能。"
           ],
-          "checked_at": "2026-10-13T15:11:12+00:00",
+          "checked_at": "2026-10-13T21:11:49+00:00",
           "estimate_gap": "使用統計僅 Claude history 的明確斜線指令代理計數；實際技能載入次數未知，不作 token 估算。",
           "facts": [
-            "29 項相容性核對的分類基準為 2 可直接共用、24 工具專用、3 需專用版決策；其中 cross-review 後續已批准並交付，另外 2 項未批准",
+            "29 項相容性核對的分類基準為 2 可直接共用、24 工具專用、3 需專用版決策；cross-review、deep-research 已批准並交付，stock-quote-refresh 未批准",
             "cross-review 最終版 4307 bytes；新 session catalog／兩限制情境驗的是 4166 bytes 修前版，未做跨模型或付費 API 實測",
+            "deep-research 3611 bytes 專用版及 Codex 入口已交付；獨立新 session catalog、入口／內容身分及來源不足、無分工工具、私人資料三項受限情境通過，Claude 原版及參照檔未變；未執行真實研究或外部 API。",
             "現況：Claude 直接 9、synced 16；Codex 直接由 3 增至 4，另有 5 個 .system 技能",
             "新增 pending-plans-listing symlink；來源主檔未修改，未搬移技能，備份及靜態檢查通過",
             "Claude synced ai-bridge 已確認為 plugin 管理的不同版本，保留",
@@ -1625,7 +1626,7 @@
           "id": "gc",
           "kind": "group",
           "title": "C skills 共用",
-          "note": "cross-review 專用版已交；另 2 項未批准"
+          "note": "2 專用版已交；stock-quote-refresh 未批准"
         },
         {
           "id": "c-inventory-fact",
@@ -1651,9 +1652,9 @@
           "phase_end": 1,
           "status": "done",
           "deps": [],
-          "note": "29 項分類已核；1 專用版已交",
-          "summary": "29 項相容性核對已完成；原需專用版決策的 3 項中，cross-review 已批准並交付，deep-research、stock-quote-refresh 尚未批准。使用次數僅為明確斜線指令代理計數。",
-          "next_step": "保留 cross-review 已交付專用版與驗證版本界線；deep-research、stock-quote-refresh 如需製作，須另行批准；pending-plans-listing 已完成，不重跑。",
+          "note": "29 項分類已核；2 專用版已交",
+          "summary": "29 項相容性核對已完成；原需專用版決策的 3 項中，cross-review、deep-research 已批准並交付，stock-quote-refresh 尚未批准。使用次數僅為明確斜線指令代理計數。",
+          "next_step": "保留 cross-review 的驗證版本界線與 deep-research 已通過的受限情境驗證；stock-quote-refresh 如需製作須另行批准。pending-plans-listing 已完成，不重跑。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1668,9 +1669,9 @@
           "deps": [
             "c-plan"
           ],
-          "note": "cross-review Codex 版已交付",
-          "summary": "cross-review Codex 專用版及入口已完成；Claude 原版與入口保留。pending-plans-listing 共用入口已完成，不重跑。",
-          "next_step": "保留 cross-review 已交付專用版與驗證版本界線；deep-research、stock-quote-refresh 如需製作，須另行批准；pending-plans-listing 已完成，不重跑。",
+          "note": "cross-review／deep-research 已交付",
+          "summary": "cross-review、deep-research Codex 專用版及入口已完成；Claude 原版與相依保留。pending-plans-listing 共用入口已完成，不重跑。",
+          "next_step": "保留 cross-review 的驗證版本界線與 deep-research 已通過的受限情境驗證；stock-quote-refresh 如需製作須另行批准。pending-plans-listing 已完成，不重跑。",
           "nested": false,
           "timing_source_id": null
         },
@@ -1685,9 +1686,9 @@
           "deps": [
             "c-build"
           ],
-          "note": "修前版獨立驗證／最終版本機驗證",
-          "summary": "cross-review Codex 專用版已交付，Codex 入口已改指專用版，Claude 原版及入口保留。最終 4307 bytes 版 frontmatter、連結、備份與 Claude 未變檢查通過；獨立新 session catalog 及兩個限制情境通過的是修訂前 4166 bytes 版，非實際跨模型或付費 API 測試。",
-          "next_step": "保留 cross-review 已交付專用版與驗證版本界線；deep-research、stock-quote-refresh 如需製作，須另行批准；pending-plans-listing 已完成，不重跑。",
+          "note": "deep-research 新 session／三情境通過",
+          "summary": "cross-review Codex 專用版已交付，Codex 入口已改指專用版，Claude 原版及入口保留。最終 4307 bytes 版 frontmatter、連結、備份與 Claude 未變檢查通過；獨立新 session catalog 及兩個限制情境通過的是修訂前 4166 bytes 版，非實際跨模型或付費 API 測試。 deep-research 3611 bytes 專用版及 Codex 入口已交付；獨立新 session catalog、入口／內容身分及來源不足、無分工工具、私人資料三項受限情境通過，Claude 原版及參照檔未變；未執行真實研究或外部 API。",
+          "next_step": "保留 cross-review 的驗證版本界線與 deep-research 已通過的受限情境驗證；stock-quote-refresh 如需製作須另行批准。pending-plans-listing 已完成，不重跑。",
           "nested": false,
           "timing_source_id": null
         },
